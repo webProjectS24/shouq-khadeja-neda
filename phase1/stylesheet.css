@@ -1,0 +1,61 @@
+/*----------------------*\
+#Header
+\*----------------------*/
+.header .input-wrapper,
+.header-action-btn:not(:first-child),
+.navbar{ display: none;}
+
+.container{
+    padding-inline:15px ;
+}
+
+.header{
+    position: relative;
+    padding-block-end:80px;
+}
+.alert{
+    background-color:rgb(231, 229, 227);
+    color:black;
+    font-size:medium;
+    font-weight:700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-block: 15px;
+}
+.header-top{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding-block: 26px;
+    z-index: 4;
+}
+.header-top.action{
+    position: fixed;
+    top: -88px;
+    bottom:auto;
+    box-shadow: none;
+    transform: translateY(100%);
+}
+.header-top.header-hide{
+    box-shadow: none;
+    transform: translateY(0);
+}
+.header-top.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.nav-open-btn{
+    display: grid;
+    width: 26px;
+    gap: 6px;
+    padding-block: 5px;
+}
+.nav-open-btn.line{
+    height: 2px;
+    background-color: black;
+
+}

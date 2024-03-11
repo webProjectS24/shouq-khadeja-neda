@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Main page</title>
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -22,12 +32,48 @@
                 <span class="line line-2"></span>
                 <span class="line line-3"></span>
             </button>
+
             <div class="input-wrapper">
-            <input type="search" name="search" placeholder="Search Item" class="search-field">
+            <input type="search" name="search" placeholder="Search product" class="search-field">
+
             <button class="search-submit" aria-label="search">
                 <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
             </button>
             </div>
+
+            <div class="header-actions">
+                <button class="header-action-btn" aria-label="user">
+                    <ion-icon name="person-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+                </button>
+
+                <button class="header-action-btn" aria-label="favourite item">
+                    <ion-icon name="star-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+                    <span class="btn-badge">0</span>
+                </button>
+                <button class="header-action-btn" aria-label="cart item">
+                    <ion-icon name="star-outline" aria-hidden="true" aria-hidden="true"></ion-icon>
+                    <span class="btn-badge">0</span>
+                </button>
+
+            </div>
+
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li>
+                       
+                        <a href="#home" class="navbar-link has-after">Home</a>
+                    </li>
+                    <li>
+                        <a href="#shop" class="navbar-link has-after">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#offer" class="navbar-link has-after">Offer</a>
+                    </li>
+                    <li>
+                        <a href="#us" class="navbar-link has-after">Us</a>
+                    </li>
+                </ul>
+            </nav>
             </div>
         </div>
 
