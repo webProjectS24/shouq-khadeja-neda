@@ -1,5 +1,6 @@
 class Seller{
-    constructor(username, password,bankAccount){
+    constructor(companyName,username, password,bankAccount){
+        this.companyName = companyName
         this.username = username;
         this.password = password;
         this.bankAccount = bankAccount;

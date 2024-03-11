@@ -7,9 +7,29 @@
     <link rel="stylesheet" href="/css/stylesheet.css">
 </head>
 <body>
-    <header></header>
+    <header><h1>Upload an Item</h1></header>
     <main>
-        
+        <div class="form">
+        <form action="">
+            <fieldset>
+                <label for="name">Name of the item:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="description">Provide the Description of the Item:</label>
+                <textarea name="description" id="description"></textarea>
+
+                <label for="price">Price of the item in QR:</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+
+                <label for="image">Upload an Image of the item:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </fieldset>
+            <button>submit</button>
+        </form>
+        </div>
     </main>
     <footer></footer>
 </body>
