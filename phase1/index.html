@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js crossorigin='anonymous'"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>Main page</title>
 </head>
 <body>
@@ -15,7 +15,21 @@
             </div>
         </div>
 
-        <div class="header-top"></div>
+        <div class="header-top">
+            <div class="container">
+                <button class="nav-open-btn" aria-labe="open menu">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+            <div class="input-wrapper">
+            <input type="search" name="search" placeholder="Search Item" class="search-field">
+            <button class="search-submit" aria-label="search">
+                <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+            </button>
+            </div>
+            </div>
+        </div>
 
     </header>
 </body>
