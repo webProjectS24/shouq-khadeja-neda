@@ -1,0 +1,31 @@
+nav{
+    background-color: rgb(195, 22, 160);
+    color:  rgb(195, 22, 160);
+}
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navlist{
+    display: flex;
+}
+.navlist li{
+    text-transform: uppercase;
+    font-size: 19px;
+    cursor: pointer;
+    z-index: 111;
+}
+.navlist li a{
+    color: black;
+    padding: 10px;
+    position: relative;
+}
+.navlist li a::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 95%;
+    width: 100%;
+}
