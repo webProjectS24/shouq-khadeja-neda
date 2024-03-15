@@ -1,6 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    range: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+body{
+    background-color: #FAF8F0;
+    font-family:'Courier New', Courier, monospace;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    overflow: hidden;
+
+}
 nav{
-    background-color: rgb(195, 22, 160);
-    color:  rgb(195, 22, 160);
+    background-color:#E3DAC9 ;
+    color:black;
 }
 .nav-container{
     display: flex;
@@ -28,4 +49,33 @@ nav{
     left: 0;
     height: 95%;
     width: 100%;
+    opacity: 0;
+    visibility:hidden;
 }
+.navlist li a:hover:before,
+.navlist li a.active:before{
+    height: 95%;
+    opacity: 1;
+    visibility:visible;
+}
+.container{
+    margin:0 auto;
+    width: 85%;
+}
+.logo div:first-child{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 1;
+    color:aliceblue;
+}
+.logo div:first-child span{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 1;
+    color:#8D029B;
+}
+
+
+
