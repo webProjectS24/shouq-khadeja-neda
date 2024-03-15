@@ -15,7 +15,7 @@ body{
     background-color: #FAF8F0;
     font-family:'Courier New', Courier, monospace;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    line-height: 1.7;
+    line-height: 3;
     overflow: hidden;
 
 }
@@ -33,7 +33,7 @@ nav{
 }
 .navlist li{
     text-transform: uppercase;
-    font-size: 19px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 111;
 }
@@ -50,7 +50,9 @@ nav{
     height: 95%;
     width: 100%;
     opacity: 0;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     visibility:hidden;
+    border-bottom: solid #8D029B;
 }
 .navlist li a:hover:before,
 .navlist li a.active:before{
@@ -76,6 +78,22 @@ nav{
     line-height: 1;
     color:#8D029B;
 }
+.menu-btn{
+   display: flex;
+}
+.icons{
+    display: flex;
+    gap: 2rem;
+}
+.icons .lnr{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.icons .lnr:hover{
+    color: #8D029B;
+}
+
 
 
 
