@@ -95,48 +95,16 @@ nav{
 }
 
 
+/* login */
+
 /* section Home */
 
 .home{
     padding: 0%;
 }
 
-.swiper {
-    width: 100%;
-    height: 100%;
- }
 
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-.Slide1{
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    /* add image */
-}
 
-.home-search input{
-    height: 4rem;
-    width: 25rem;
-    border-radius: 40%;
-}
-.home-search .lnr{
-    font-weight: 400;
-    font-size: medium;
-}
-
+/* section about */
+/* section shop */
+/* section contact us */
