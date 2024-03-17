@@ -100,15 +100,19 @@ nav{
 .home{
     padding: 0%;
 }
-.home-slide1{
+.Slide1{
     background-position: center;
     background-size: cover;
     height: 100vh;
     width: 100%;
     /* add image */
 }
-.home-slide2{
-
+.Slide2{
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    /* add image */
 }
 
 
