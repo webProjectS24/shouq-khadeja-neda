@@ -69,7 +69,7 @@ nav{
     text-transform: uppercase;
     font-size: 2rem;
     line-height: 1;
-    color:aliceblue;
+    color:black;
 }
 .logo div:first-child span{
     font-weight: 400;
@@ -100,6 +100,28 @@ nav{
 .home{
     padding: 0%;
 }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+ }
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 .Slide1{
     background-position: center;
     background-size: cover;
@@ -115,4 +137,41 @@ nav{
     /* add image */
 }
 
+.content{
+    position: absolute;
+    
+}
+.home-search input{
+    height: 4rem;
+    width: 25rem;
+    border-radius: 40%;
+}
+.home-search .lnr{
+    font-weight: 400;
+    font-size: medium;
+}
+.home .swiper-button-next.swiper-button-disabled,
+.home .swiper-button-prev.swiper-button-disabled{
+    opacity: 1;
+}
+.home .swiper-button-next{
+    color: #8D029B;
+    /* //background-color: #E3DAC9; */
+    font-size: 2rem;
+    font-weight: 500;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 45%;
+    position: absolute;
+}
+.home .swiper-button-prev{
+    color: #8D029B;
+    /* //background-color: #E3DAC9; */
+    font-size: 2rem;
+    font-weight: 500;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 45%;
+    position: absolute;
+}
 
