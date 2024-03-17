@@ -1,3 +1,23 @@
-main{
-    background-image: ;
+body{
+    width: 100%;
 }
+main{
+    background-image:url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uploadForm{
+    text-align: center;
+}
+fieldset{
+    padding: 2rem 7rem 2rem 7rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
