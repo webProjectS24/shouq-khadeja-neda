@@ -1,3 +1,6 @@
+h1{
+    text-align: center;
+}
 .items-container{
     display: grid;
     grid-gap: 10px;
@@ -21,7 +24,7 @@
   }
   .item-title {
     align-self: center;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 5px;
   }
@@ -53,4 +56,4 @@
   .item-button:hover {
     background-color: #fdd1e3;
   }
-  
+ 
