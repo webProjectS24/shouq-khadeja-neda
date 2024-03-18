@@ -1,0 +1,57 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+}
+main{
+    background-image:url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h1{
+        text-align: center;
+    }
+}
+fieldset{
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label{
+        align-self: flex-start;
+    }
+}
+.input{
+    border: 1px solid black;
+    border-radius:5px;
+    height: 31px;
+    padding: 3px 7px;
+    width: 100%;
+}
+.uploadImage{
+    color: rgba(0, 0, 0, 0.287);
+    border: none;
+}
+
+form{ 
+    padding: 1rem 2rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2%;
+    button{
+    background-color: #bbae7c;
+    padding: 0.5rem 7px;
+    width: 100%;
+    border-radius: 5px;
+    }
+}
+footer{
+    
+}

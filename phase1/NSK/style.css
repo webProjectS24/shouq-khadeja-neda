@@ -69,7 +69,7 @@ nav{
     text-transform: uppercase;
     font-size: 2rem;
     line-height: 1;
-    color:aliceblue;
+    color:black;
 }
 .logo div:first-child span{
     font-weight: 400;
@@ -95,17 +95,16 @@ nav{
 }
 
 
-/* section */
+/* login */
+
+/* section Home */
 
 .home{
     padding: 0%;
 }
-.home-slide1{
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    /* add image */
-}
 
 
+
+/* section about */
+/* section shop */
+/* section contact us */
