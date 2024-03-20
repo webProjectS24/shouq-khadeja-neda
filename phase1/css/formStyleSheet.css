@@ -4,54 +4,64 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    height: 100%;
-}
 main{
-    background-image:url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    h1{
-        text-align: center;
-    }
-}
-fieldset{
-    border-radius: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    label{
-        align-self: flex-start;
+    .uploadForm{
+        width: 60vw;
     }
-}
-.input{
-    border: 1px solid black;
-    border-radius:5px;
-    height: 31px;
-    padding: 3px 7px;
-    width: 100%;
-}
-.uploadImage{
-    color: rgba(0, 0, 0, 0.287);
-    border: none;
+    form{ 
+        padding: 1rem 2rem;
+        width: 100%;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 2%;
+        button{
+        background-color: #bbae7c;
+        padding: 0.5rem 0.2rem;
+        width:30vw;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+        button:hover{
+            background-color:bisque;
+            color: black;
+        }
+        fieldset{
+            border-radius: 2%;
+            font-weight: 800;
+            text-align: start;
+            margin-bottom: 0.5rem;
+            .input{
+                border: 1px solid black;
+                border-radius:5px;
+                height: 31px;
+                padding: 3px 7px;
+                width: 100%;
+            }
+        }
+        }
 }
 
-form{ 
-    padding: 1rem 2rem;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 2%;
-    button{
-    background-color: #bbae7c;
-    padding: 0.5rem 7px;
-    width: 100%;
-    border-radius: 5px;
+
+@media screen and (min-width: 600px){
+    main{
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            fieldset {
+                display: grid;
+                grid-template-columns: 1fr 2.5fr; 
+                gap: 1rem; 
+                text-wrap: nowrap;
+              }
+              button {
+                align-self: center;
+              }
+          }  
     }
-}
-footer{
-    
+      
 }
