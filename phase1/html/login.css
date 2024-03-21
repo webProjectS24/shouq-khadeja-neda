@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+}
+
+.body {
+  font-family: "Poppins", sans-serif;
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  form {
+    display: flex;
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+    border: 1px solid rgb(215, 214, 214);
+  }
+
+  .login-text {
+    font-size: 23px;
+    font-weight: 500;
+  }
+  .email,
+  .password {
+    flex: 1;
+    width: 100%;
+    min-width: 100px;
+    padding: 15px;
+    border: solid;
+    border-color: rgb(215, 214, 214);
+    caret-color: var(--primary-color);
+    font-size: 10px;
+    border-radius: 50px;
+    border-width: 1px;
+    outline-width: 0;
+  }
+  .email:hover,
+  .password:hover {
+    border: solid;
+    border-width: 0.01px;
+  }
+  .email::placeholder,
+  .password::placeholder {
+    color: var(--primary-color);
+  }
+
+  .forgot-password {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 12px;
+  }
+
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+
+  .login-btn {
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .login-btn:hover {
+    text-decoration: underline;
+  }
+}

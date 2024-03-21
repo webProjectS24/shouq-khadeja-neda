@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/NSK/style.css">
-    <link rel="stylesheet" href="/css/formStyleSheet.css">
-   
+    <link rel="stylesheet" href="/css/itemDetailsStyleSheet.css">
 </head>
 <body>
     <header>
@@ -35,30 +34,25 @@
         </nav>
     </header>
     <main>
-        
-        <h1>Upload an Item</h1>
-        <div class="uploadForm">
-        <form action="">
-            <fieldset>
-                <label for="name">Name of Item:</label>
-                <input type="text" id="name" name="name" required class="input">
-
-                <label for="description">Description:</label>
-                <textarea name="description" id="description" class="input"></textarea>
-
-                <label for="price">Price in QR:</label>
-                <input type="number" id="price" name="price" required class="input">
-
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" required class="input">
-
-                <label for="image">Image URL:</label>
-                <input type="url" id="image" name="image" class="input">
-                
-            </fieldset>
-            <button>submit</button>
-        </form>
-        </div>
+        <div class="itemDetails">
+                <div class="details">
+                    <img src="/images/image copy.png" alt="Item 1">
+                    <div class="content">
+                    <h2 class="title">Item 1</h2>
+                    <p class="description">Description of Item 1</p>
+                    <p class="price">$10.99</p>
+                    <p class="quantity">Available: 5</p>
+                    <h3>Sale History</h3>
+                    <h4>Total number of items sold: 3</h4>
+                    <ul class="saleHistory">
+                        <li>Buyer: user1, Price: 18.99 QR</li>
+                        <li>Buyer: user2, Price: 19.99 QR</li>
+                        <li>Buyer: user3, Price: 17.99 QR</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
     </main>
+    <footer></footer>
 </body>
 </html>
