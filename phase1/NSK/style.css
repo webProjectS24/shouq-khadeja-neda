@@ -80,22 +80,67 @@ nav{
 }
 .menu-btn{
     display: none;
-    font-size: 1.3rem;
+    font-size: 24px;
     cursor: pointer;
     margin-left: 25px;
+    z-index: 10001;
 
 }
 .icons{
     display: flex;
-    gap: 2rem;
+   cursor: pointer;
+   z-index: 1000;
+   font-weight: 20px;
+   column-gap: 0.8rem;
+   align-items: center;
 }
+
 .icons .lnr{
-    font-size: 1.1rem;
+    font-size: 20px;
     cursor: pointer;
+    padding: 7px;
+    border-radius: 0.4rem;
 }
 
 .icons .lnr:hover{
     color: #8D029B;
+}
+
+.icons i{
+    position: relative;
+}
+.icons span{
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 500;
+    border-radius: 50%;
+    background-color: black;
+    color: aliceblue;
+}
+
+.search-box{
+    position: absolute;
+    top: 10%;
+    right: 1rem;
+    width: 190px;
+}
+.search-box input{
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    color: black;
+}
+.search-box input::placeholder{
+    
 }
 
 
