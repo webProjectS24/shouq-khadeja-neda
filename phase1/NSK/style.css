@@ -227,4 +227,13 @@ hr{
     border-bottom: 1px solid #1e1b1b;
     margin: auto;
 }
+.coloum h3:hover{
+    color: #8D029B;
 
+}
+.social-links .fab:hover{
+    color: #8D029B;
+}
+ul li a:hover{
+    color: #8D029B;
+}
