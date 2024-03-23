@@ -17,7 +17,6 @@ body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 3;
     overflow: auto;
-
 }
 nav{
     background-color:#E3DAC9 ;
@@ -162,3 +161,33 @@ nav{
 /* section about */
 /* section shop */
 /* section contact us */
+
+
+
+/* footer */
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color:#E3DAC9;
+    padding: 60px 10%;
+    flex-direction: column;
+    height: 90vh;
+
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.coloum{
+    width: 25%;
+}
+.coloum h3{
+    font-size: 15px;
+    color: black;
+    
+}
