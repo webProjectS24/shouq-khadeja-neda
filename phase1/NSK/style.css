@@ -17,6 +17,7 @@ body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 3;
     overflow: auto;
+   
 }
 nav{
     background-color:#E3DAC9 ;
@@ -46,7 +47,7 @@ nav{
     position: absolute;
     top: 0;
     left: 0;
-    height: 95%;
+    height: 90%;
     width: 100%;
     opacity: 0;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -56,7 +57,7 @@ nav{
 .navlist li a:hover:before,
 .navlist li a.active:before{
     height: 95%;
-    opacity: 1;
+    opacity: 2;
     visibility:visible;
 }
 .container{
@@ -165,29 +166,65 @@ nav{
 
 
 /* footer */
+
+footer{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    padding: 100px 0 0;
+}
 .footer-container{
     display: flex;
     flex-wrap: wrap;
     margin-top: auto;
     background-color:#E3DAC9;
-    padding: 60px 10%;
+    padding: 2px;
+    text-align: center;
     flex-direction: column;
-    height: 90vh;
-
 }
 
 .row{
     display: flex;
     flex-wrap: wrap;
 }
-ul{
+ul li{
     list-style: none;
+    margin-bottom: 13px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
 }
 .coloum{
-    width: 25%;
+   flex-basis: 25%;
+   padding: 10px;
+   text-align: justify;
 }
 .coloum h3{
-    font-size: 15px;
-    color: black;
+   width: fit-content;
+   margin: 5px;
+   position: relative;
+   border-bottom: 2px solid #8D029B;
+   padding-bottom: 0cqh;
     
 }
+.social-links .fab{
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   line-height: 40px;
+   margin-right: 20px;
+   font-size: 20px;
+   cursor: pointer;
+   color: #000;
+   background: #fff;
+   text-align: center;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #1e1b1b;
+    margin: auto;
+}
+
