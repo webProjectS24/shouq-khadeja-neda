@@ -1,10 +1,8 @@
 // npm i fs-extra
 import fs from 'fs-extra'
-import { nanoid } from 'nanoid'
 import path from 'path'
-import { log } from 'util'
 
-class ItemsRepo {
+class ItemRepo {
     constructor() {
         this.path = path.join(process.cwd(), '/data/item.json')
         console.log(this.path);
@@ -28,7 +26,7 @@ class ItemsRepo {
             await fs.writeJson(this.path, this.items)
             return "updated successfully"
         }
-        return "Unable to update account because it does not exist"
+        return "Unable to update item because it does not exist"
     }
     async getItem(itemNo) {
         this.items = await fs.readJson(this.path)
@@ -36,4 +34,4 @@ class ItemsRepo {
         return item
     }
 }
-export default AccountsRepo
+export default ItemRepo

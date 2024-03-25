@@ -1,8 +1,6 @@
 // npm i fs-extra
 import fs from 'fs-extra'
-import { nanoid } from 'nanoid'
 import path from 'path'
-import { log } from 'util'
 
 class AccountsRepo {
     constructor() {
