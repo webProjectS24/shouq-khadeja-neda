@@ -14,6 +14,11 @@ class ItemRepo {
     }
     async addItem(item) {
         item.itemNo = Math.floor(Math.random() * (1000))
+        try {
+            this.items = await this.getItems();
+        } catch (error) {
+            this.items = []; 
+        }
         this.items.push(item)
         await fs.writeJSON(this.path, this.items)
         console.log("added!");

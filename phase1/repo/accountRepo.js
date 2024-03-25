@@ -14,6 +14,11 @@ class AccountsRepo {
     }
     async addAccount(account) {
         account.accountNo = Math.floor(Math.random() * (1000))
+        try {
+            this.accounts = await this.getAccounts();
+        } catch (error) {
+            this.accounts = []; 
+        }
         this.accounts.push(account)
         await fs.writeJSON(this.path, this.accounts)
         console.log("added!");
@@ -33,8 +38,8 @@ class AccountsRepo {
         const account = this.accounts.find(acc => acc.accountNo == accNo)
         return account
     }
-    deposit(accountNo,amount) {
-        const account = this.getAccount(accountNo)
+    async deposit(accountNo,amount) {
+        const account = await this.getAccount(accountNo)
         if(amount<0)
         return false;
         else{
@@ -42,12 +47,12 @@ class AccountsRepo {
         updateAccount(account, accountNo)
         }
     }
-    withdraw(accountNo,amount) {
-        const account = this.getAccount(accountNo)
+    async withdraw(accountNo,amount) {
+        const account = await this.getAccount(accountNo)
         if(amount<0 || account.balance<amount)
         return false;
         account.balance-= amount;
-        updateAccount(account, accountNo)
+        await this.updateAccount(account, accountNo)
     }
 }
 export default AccountsRepo
