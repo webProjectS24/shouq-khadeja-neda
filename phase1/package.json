@@ -1,7 +1,23 @@
 {
+  "name": "phase1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
   "dependencies": {
     "fs-extra": "^11.2.0",
+    "graceful-fs": "^4.2.11",
+    "inherits": "^2.0.3",
+    "jsonfile": "^6.1.0",
     "nanoid": "^5.0.6",
-    "path": "^0.12.7"
-  }
+    "path": "^0.12.7",
+    "process": "^0.11.10",
+    "universalify": "^2.0.1",
+    "util": "^0.10.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
 }

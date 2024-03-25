@@ -1,8 +1,6 @@
 class Item{
-    static count = 11;
     constructor(name, description, price, quantity, image){
-        this.itemid = Item.count;
-        count++;
+        this.itemid = Math.floor(Math.random() * (1000));
         this.name = name;
         this.description = description;
         this.price = price;

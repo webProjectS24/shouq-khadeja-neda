@@ -22,3 +22,5 @@ class BankAccount {
         return true;
     }
 }
+
+export default {BankAccount} 
