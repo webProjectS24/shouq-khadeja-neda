@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    height: 75vh;
+}
 main{
     text-align: center;
     display: flex;
@@ -11,23 +14,16 @@ main{
     align-items: center;
     .uploadForm{
         width: 60vw;
+    }   
+    a{
+        border: 1px solid black;
+        padding: 0rem 1rem;
+        background-color: #bbae7c;
+        color: black;
+        border-radius:10px ;
     }
-    .title-link{
-        width: 60%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        a{
-            border: 1px solid black;
-            padding: 0rem 1rem;
-            background-color: #bbae7c;
-            color: black;
-            border-radius:10px ;
-        }
-        a:hover{
-            background-color: bisque;
-        }
+    a:hover{
+        background-color: bisque;
     }
     .form{ 
         padding: 1rem 2rem;
@@ -37,10 +33,10 @@ main{
         border-radius: 2%;
         .form-btns{
             display: flex;
+            justify-content: end;
             gap: 1rem;
-            input[type="submit"],
-            input[type="reset"] {
-            width: 100%;
+            input[type="submit"]{
+            width: 70%;
             padding: 10px;
             border-radius: 4px;
             cursor: pointer;
@@ -48,8 +44,7 @@ main{
             color: black;
             background-color: #bbae7c;
             }
-            input[type="submit"]:hover,
-            input[type="reset"]:hover {
+            input[type="submit"]:hover {
             background-color: bisque;
             }
         }
@@ -71,7 +66,10 @@ main{
 
 
 
-@media screen and (min-width: 40rem){
+@media screen and (min-width: 45rem){
+    header{
+        height: 10vh;
+    }
     main{
         .form {
             display: flex;

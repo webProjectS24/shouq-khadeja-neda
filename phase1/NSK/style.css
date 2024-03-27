@@ -229,6 +229,17 @@ hr{
     border-bottom: 1px solid #1e1b1b;
     margin: auto;
 }
+.buy-btn{
+    display:flex;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #bbae7c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 1px;
+    cursor: pointer;
+}
 .coloum h3:hover{
     color: #8D029B;
 
@@ -244,7 +255,7 @@ ul li a:hover{
 
    } */
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 46rem) {
     header{
      height: 65vh;
     }

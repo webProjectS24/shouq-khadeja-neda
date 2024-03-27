@@ -3,6 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    display: grid;
+    grid-template-rows: 0.2fr 3fr 0.2fr;
+    grid-template-areas: "header" "main" "footer";
+  }
+  header{
+    height: 75vh;
+    grid-area: header;
+  }
+  main{
+    grid-area: main;
+  }
+  footer{
+    grid-area: footer;
+  }
 main{
     width: 100%;
     padding: 1rem;
@@ -66,9 +81,10 @@ main{
         }
     }
 
-@media screen and (min-width: 40rem){
-
-        
+@media screen and (min-width: 45rem){
+        header{
+            height: 0vh
+        }
         main{
             grid-area: main;
             align-items: center;

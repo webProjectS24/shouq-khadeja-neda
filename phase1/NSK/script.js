@@ -1,6 +1,8 @@
 const productsContainter = document.querySelector("#products-container");
 const itemJson = "../data/item.json";
+const userJson = "../data/user.json";
 let products = [];
+let accounts = [];
 document.addEventListener("DOMContentLoaded", function () {
   loadProducts();
 });
@@ -11,6 +13,13 @@ async function loadProducts() {
     localStorage.items = JSON.stringify(products);
   } else {
     products = JSON.parse(localStorage.items);
+  }
+  if (!localStorage.accounts) {
+    const data = await fetch(userJson);
+    const accounts = await data.json();
+    localStorage.accounts = JSON.stringify(accounts);
+  } else {
+    accounts = JSON.parse(localStorage.accounts);
   }
   displayProducts(products);
 }
@@ -29,16 +38,13 @@ function productToHTML(product) {
                         <p class="product-price">${product.price}</p>
                         <p class="product-description">${product.description}</p>
                     </div>
-                    // <div class="md-2">
-                    //     <button type="button" class="btn btn-danger btn-lg" onclick="deleteProduct(${product.id})">Delete</button>
-                       
-                    //         <button type="button" class="btn btn-success btn-lg" onclick="toggleFavorite(${product.itemNo})">Remove to Favorites</button>
-                    //         <button type="button" class="btn btn-primary btn-lg" onclick="toggleFavorite(${product.itemNo})">Add to Favorites</button> 
-                    // </div >
+                    <div class="md-2">                       
+                            <button class="buy-btn" onclick="buyProduct(${product.itemNo},${product.sellerId})">Buy this item</button> 
+                    </div >
                 </div >
     `;
 }
-search;
+//search;
 let search = document.querySelector(".search-box");
 
 document.querySelector("#search-icon").onclick = () => {
@@ -60,4 +66,17 @@ function searchItems() {
   fetch("item.json")
     .then((response) => response.json())
     .then((data) => {});
+}
+
+function buyProduct(itemNo,sellerId){
+  let index = accounts.findIndex(account => account.isLogged == true)
+    if(index ==-1){
+        alert("please log in first")
+        window.location.href = `../html/login.html`
+    }
+    else{
+      window.location.href = `./buyProduct.html?accountNo=${accounts[index].accountNo}&itemNo=${itemNo}&sellerId=${sellerId}`;
+    }
+
+
 }

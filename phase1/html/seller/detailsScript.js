@@ -1,33 +1,33 @@
 const itemDetails = document.querySelector("#itemDetails")
 const usersJson = '../data/user.json'
+const itemsJson = '../data/user.json'
 let items = []
 let accounts = []
-let account
+let accountNo, itemNo;
 document.addEventListener('DOMContentLoaded', function () {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const itemNo = urlParams.get('itemNo');
+    itemNo = urlParams.get('itemNo');
+    accountNo = urlParams.get('accountNo');
     loadPage()
 });
 async function loadPage(){
     if(!localStorage.accounts){
-    const data = await fetch(usersJson)
-    const accounts = await data.json()
-    localStorage.accounts = JSON.stringify(accounts)
+        const data = await fetch(usersJson)
+        const accounts = await data.json()
+        localStorage.accounts = JSON.stringify(accounts)
+    }
+    if(!localStorage.items){
+        const data = await fetch(itemsJson)
+        const items = await data.json()
+        localStorage.items = JSON.stringify(items)
     }
     else{
         accounts = JSON.parse(localStorage.accounts)
+        items = JSON.parse(localStorage.items)
     }
-        items = findAccountItems(accounts)
-        displayItems(items)
-}
-function findAccountItems(accounts){
-    let account = accounts.find(account => account.isLogged == true)
-    return account.items
-}
-function displayItems(items){
-    let htmlForItems = items.map(item => itemToHTML(item)).join(' ')
-    itemDetails.innerHTML = htmlForItems
+        let item = items.find(item=>item.itemNo ==itemNo)
+        itemDetails.innerHTML = itemToHTML(item)
 }
 function itemToHTML(item){
     return `
@@ -41,10 +41,11 @@ function itemToHTML(item){
                     <h3>Sale History</h3>
                     <h4>Total number of items sold: ${item.sold}</h4>
                     <ul class="saleHistory">
-                        <li>Buyer: user1, Price: ${item.price} QR</li>
-                        <li>Buyer: user2, Price: ${item.price}QR</li>
-                        <li>Buyer: user3, Price: ${item.price} QR</li>
+                    ${BuyersList(item.Buyers,item.price)}
                     </ul>
                     </div>
     `
+}
+function BuyersList(buyers,price){
+    return buyers.map(buyer => `<li>Buyer: ${buyer.username}, Price: ${price} QR</li>`)
 }
