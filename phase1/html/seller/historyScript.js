@@ -39,7 +39,7 @@ function itemToHTML(item){
             <p class="item-description">${item.description}</p>
             <p class="item-quantity">Available: ${item.quantity}</p>
             <p class="item-price">${item.price} QAR</p>
-            <p class="item-status">${item.status}</p>
+            <p class="item-status">${item.status == "On Sale"?"Available": "Sold"}</p>
         </div>
         <a class="item-button" href="../seller/itemDetails.html?itemNo=${item.itemNo}">View Details</a>
     </div>
