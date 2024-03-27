@@ -61,12 +61,16 @@ h1{
     color: #666;
   }
   .item-button {
+    display:flex;
+    justify-content: center;
+    text-align: center;
     width: 100%;
+    font-weight: 700;
     background-color: #bbae7c;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 8px 16px;
+    padding: 1px;
     cursor: pointer;
   }
   .item-button:hover {
