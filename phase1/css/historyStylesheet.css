@@ -1,11 +1,26 @@
 
+
+body{
+  display: grid;
+  grid-template-rows: 0.2fr 2fr 0.2fr;
+  grid-template-areas: "header" "main" "footer";
+}
+header{
+  grid-area: header;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+}
 h1{
     text-align: center;
 }
 .items-container{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 .item-card {
     background-color: #f9f9f9;
