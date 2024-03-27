@@ -255,7 +255,7 @@ ul li a:hover{
 
    } */
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 46rem) {
     header{
      height: 65vh;
     }

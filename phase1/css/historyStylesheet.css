@@ -6,6 +6,7 @@ body{
   grid-template-areas: "header" "main" "footer";
 }
 header{
+  height: 75vh;
   grid-area: header;
 }
 main{
@@ -77,5 +78,11 @@ h1{
   .item-button:hover {
     background-color: #fdd1e3;
     color: black;
+  }
+
+  @media screen and (min-width: 45rem){
+    header{
+      height: 0vh;
+    }
   }
  
