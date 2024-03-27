@@ -8,6 +8,8 @@ async function addItem(e){
     e.preventDefault()
     const item = formToObject(e.target) //e.target is the form itself
     item.itemNo = Date.now()
+    item.status = "On Sale"
+    item.sold = 0
     addItemToaccount(item)
 }
 function formToObject(form){
