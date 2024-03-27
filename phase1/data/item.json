@@ -7,7 +7,8 @@
     "imageUrl": "https://cdn.shopify.com/s/files/1/1338/0845/products/brain-freeze_a_800x1200.jpg?v=1502255076",
     "itemNo": 789,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Lippie Stix",
@@ -17,7 +18,8 @@
     "imageUrl": "https://cdn.shopify.com/s/files/1/1338/0845/collections/blottedlip-lippie-stix_grande.jpg?v=1512588803",
     "itemNo": 497,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "No Filter Foundation",
@@ -27,7 +29,8 @@
     "imageUrl": "https://media.allure.com/photos/5b2ece85c0895718b377e11e/master/w_1600%2Cc_limit/115_MedDark_800x1200.jpg",
     "itemNo": 187,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Lipstick",
@@ -37,7 +40,8 @@
     "imageUrl": "https://www.boosh.ca/cdn/shop/products/DUSTYROSE_LID_1024x1024@2x.jpg?v=1574716705",
     "itemNo": 96,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Serum Foundation",
@@ -47,7 +51,8 @@
     "imageUrl": "https://shop-beauty.dior.qa/cdn/shop/products/Y0996299_C020300010_E01_GHC_fr_FR_1850x.jpg?v=1630408896",
     "itemNo": 159,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Coverage Foundation",
@@ -57,7 +62,8 @@
     "imageUrl": "https://shop-beauty.dior.qa/cdn/shop/products/Y0009000_C000900030_E01_GHC_1200x1200.jpg?v=1589891716",
     "itemNo": 500,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Liquid Liner",
@@ -67,7 +73,8 @@
     "imageUrl": "https://cdn11.bigcommerce.com/s-59iaz8k/images/stencil/2048x2048/products/445/4582/2_edited__36677.1655477023.jpg?c=2",
     "itemNo": 966,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Eyeshadow",
@@ -77,7 +84,8 @@
     "imageUrl": "https://sdcdn.io/mac/qa/mac_sku_SCAW05_1x1_0.png?width=1440&height=1440",
     "itemNo": 997,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "Setting Powder",
@@ -87,7 +95,8 @@
     "imageUrl": "https://skins.co.za/media/catalog/product/cache/a91253b8af993038a8fde9e56e889bb9/1/0/108400_lauramerci_loose_setting_powder_-_invisible_loose_setting_pow_01_1.jpg",
     "itemNo": 116,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "B Smudged",
@@ -97,7 +106,8 @@
     "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/41eTPQKZwBL.jpg",
     "itemNo": 68,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   },
   {
     "name": "B Glossy Lip Gloss",
@@ -107,6 +117,7 @@
     "imageUrl": "https://www.sallybskinyummies.com/cdn/shop/files/primrosesallyb_sskinyummies.jpg",
     "itemNo": 588,
     "sellerId": 335,
-    "status": "On Sale"
+    "status": "On Sale",
+    "sold": 0
   }
 ]

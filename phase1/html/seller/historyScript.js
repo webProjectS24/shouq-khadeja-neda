@@ -1,29 +1,40 @@
 const itemsContainer = document.querySelector("#items-container")
 const itemCard = document.querySelector("#item-card")
-const usersJson = '../data/user.json'
-let accounts = []
+const itemJson = '../data/item.json'
 let items =[]
+let accounts = []
+let accountNo
 document.addEventListener('DOMContentLoaded', function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    accountNo = urlParams.get('accountNo')
     loadItems()
 })
 async function loadItems(){
-    if(!localStorage.accounts){
-        const data = await fetch(usersJson)
-        const accounts = await data.json()
-        localStorage.accounts = JSON.stringify(accounts)
-        }
-        else{
-          accounts = JSON.parse(localStorage.accounts)
-        }
-    items = findAccountItems(accounts)
-    displayItems(items)
+    if(!localStorage.items){
+        const data = await fetch(itemJson)
+        const items = await data.json()
+        localStorage.items = JSON.stringify(items)
+    }
+    else{
+        items = JSON.parse(localStorage.items)
+    }
+    if (!checkAccountisLogged(accountNo)){
+        return;
+    }
+    let filteredItems = items.find(item => item.sellerId == accountNo)
+    displayItems(filteredItems)
 }
 function findAccountItems(accounts){
-    let account = accounts.find(account => account.isLogged == true)
-    if(account ==null){
+    let account = accounts.find(account => account.accountNo == accountNo)
+    if(!account.isLogged || account == null){
         alert("please log in first")
+        window.location.href = `../login.html`
+        return false;
     }
-    return account.items
+    else{
+        return true;
+    }
 }
 function displayItems(items){
     let htmlForItems = items.map(item => itemToHTML(item)).join(' ')
@@ -41,7 +52,7 @@ function itemToHTML(item){
             <p class="item-price">${item.price} QAR</p>
             <p class="item-status">${item.status == "On Sale"?"Available": "Sold"}</p>
         </div>
-        <a class="item-button" href="../seller/itemDetails.html?itemNo=${item.itemNo}">View Details</a>
+        <a class="item-button" href="../seller/itemDetails.html?itemNo=${item.itemNo}&accountNo=${accountNo}">View Details</a>
     </div>
     `
 }
