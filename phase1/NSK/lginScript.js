@@ -14,7 +14,6 @@ async function loadLogins() {
   } else {
     accounts = JSON.parse(localStorage.accounts);
   }
-  // displayProducts(products);
 }
 
 function submitForm(e) {
@@ -25,10 +24,11 @@ function submitForm(e) {
   const index = accounts.findIndex(
     (account) => account.username == formData.username
   );
-  if (!accounts[index] && accounts[index].password != formData.password) {
+  if (!accounts[index] || accounts[index].password != formData.password) {
     alert("User name not found or password is incorrect");
   } else {
     accounts[index].isLogged = true;
+    console.log(accounts[index].isLogged); //is working
     localStorage.accounts = JSON.stringify(accounts);
   }
 }
