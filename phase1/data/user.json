@@ -1,1 +1,49 @@
-[{"name":"Shouq","companyName":"Sefora","username":"shouq123","password":"pass123","acctType":"admin","balance":10000,"isLogged":false,"accountNo":590},{"name":"Nada","companyName":"Fenty Beauty","username":"nada123","password":"pass123","acctType":"seller","balance":15000,"isLogged":false,"accountNo":335},{"name":"Khadeja","username":"Khadeja123","password":"pass123","acctType":"customer","balance":5000,"isLogged":false,"accountNo":13},{"name":"Fatima","username":"Fatima123","password":"pass123","acctType":"customer","balance":20000,"isLogged":false,"accountNo":422},{"name":"Sara","username":"sara123","password":"pass123","acctType":"seller","balance":20000,"isLogged":false,"accountNo":170}]
+[
+  {
+    "name": "Shouq",
+    "companyName": "Sefora",
+    "username": "shouq123",
+    "password": "pass123",
+    "acctType": "admin",
+    "balance": 10000,
+    "isLogged": false,
+    "accountNo": 590
+  },
+  {
+    "name": "Nada",
+    "companyName": "Fenty Beauty",
+    "username": "nada123",
+    "password": "pass123",
+    "acctType": "seller",
+    "balance": 15000,
+    "isLogged": false,
+    "accountNo": 335
+  },
+  {
+    "name": "Khadeja",
+    "username": "Khadeja123",
+    "password": "pass123",
+    "acctType": "customer",
+    "balance": 5000,
+    "isLogged": false,
+    "accountNo": 13
+  },
+  {
+    "name": "Fatima",
+    "username": "Fatima123",
+    "password": "pass123",
+    "acctType": "customer",
+    "balance": 20000,
+    "isLogged": false,
+    "accountNo": 422
+  },
+  {
+    "name": "Sara",
+    "username": "sara123",
+    "password": "pass123",
+    "acctType": "seller",
+    "balance": 20000,
+    "isLogged": false,
+    "accountNo": 170
+  }
+]

@@ -36,7 +36,7 @@
     font-size: 23px;
     font-weight: 500;
   }
-  .email,
+  .username,
   .password {
     flex: 1;
     width: 100%;
@@ -50,12 +50,12 @@
     border-width: 1px;
     outline-width: 0;
   }
-  .email:hover,
+  .username:hover,
   .password:hover {
     border: solid;
     border-width: 0.01px;
   }
-  .email::placeholder,
+  .username::placeholder,
   .password::placeholder {
     color: var(--primary-color);
   }
