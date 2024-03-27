@@ -12,22 +12,46 @@ main{
     .uploadForm{
         width: 60vw;
     }
-    form{ 
+    .title-link{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            border: 1px solid black;
+            padding: 0rem 1rem;
+            background-color: #bbae7c;
+            color: black;
+            border-radius:10px ;
+        }
+        a:hover{
+            background-color: bisque;
+        }
+    }
+    .form{ 
         padding: 1rem 2rem;
         width: 100%;
         background-color: white;
         border: 1px solid black;
         border-radius: 2%;
-        button{
-        background-color: #bbae7c;
-        padding: 0.5rem 0.2rem;
-        width:30vw;
-        border-radius: 5px;
-        cursor: pointer;
-        }
-        button:hover{
-            background-color:bisque;
+        .form-btns{
+            display: flex;
+            gap: 1rem;
+            input[type="submit"],
+            input[type="reset"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ccc;
             color: black;
+            background-color: #bbae7c;
+            }
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+            background-color: bisque;
+            }
         }
         fieldset{
             border-radius: 2%;
@@ -44,14 +68,12 @@ main{
         }
         }
 }
-footer{
-    position: relative;
-}
+
 
 
 @media screen and (min-width: 40rem){
     main{
-        form {
+        .form {
             display: flex;
             flex-direction: column;
             padding: 2rem;

@@ -44,16 +44,19 @@
     
     </header>
     <main>
+        <div class="title-link">
+            <h1>Upload an Item</h1>
+            <a href="../seller/sellerHistory.html">Show uploaded Items History</a>
+        </div>
         
-        <h1>Upload an Item</h1>
         <div class="uploadForm">
-        <form action="">
+        <form class="form" id="form">
             <fieldset>
                 <label for="name">Name of Item:</label>
                 <input type="text" id="name" name="name" required class="input">
 
                 <label for="description">Description:</label>
-                <textarea name="description" id="description" class="input"></textarea>
+                <textarea name="description" id="description" class="input" required></textarea>
 
                 <label for="price">Price in QR:</label>
                 <input type="number" id="price" name="price" required class="input">
@@ -62,10 +65,13 @@
                 <input type="number" id="quantity" name="quantity" required class="input">
 
                 <label for="image">Image URL:</label>
-                <input type="url" id="image" name="image" class="input">
+                <input type="url" id="imageUrl" name="imageUrl" class="input" required>
                 
             </fieldset>
-            <button>submit</button>
+            <div class="form-btns">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Cancel">
+            </div>
         </form>
         </div>
     </main>
@@ -103,4 +109,5 @@
         <hr>
     </footer>
 </body>
+<script src="../seller/formScript.js"></script>
 </html>
