@@ -1,6 +1,5 @@
 // npm i fs-extra
-import fs from 'fs-extra'
-import path from 'path'
+// @ts-ignore
 
 class ItemRepo {
     constructor() {
