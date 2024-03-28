@@ -68,15 +68,12 @@ function searchItems() {
     .then((data) => {});
 }
 
-function buyProduct(itemNo,sellerId){
-  let index = accounts.findIndex(account => account.isLogged == true)
-    if(index ==-1){
-        alert("please log in first")
-        window.location.href = `../html/login.html`
-    }
-    else{
-      window.location.href = `./buyProduct.html?accountNo=${accounts[index].accountNo}&itemNo=${itemNo}&sellerId=${sellerId}`;
-    }
-
-
+function buyProduct(itemNo, sellerId) {
+  let index = accounts.findIndex((account) => account.isLogged == true);
+  if (index == -1) {
+    alert("please log in first");
+    window.location.href = `../html/login.html`;
+  } else {
+    window.location.href = `./buyProduct.html?accountNo=${accounts[index].accountNo}&itemNo=${itemNo}&sellerId=${sellerId}`;
+  }
 }

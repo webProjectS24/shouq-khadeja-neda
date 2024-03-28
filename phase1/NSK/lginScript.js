@@ -31,6 +31,9 @@ function submitForm(e) {
     console.log(accounts[index].isLogged); //is working
     localStorage.accounts = JSON.stringify(accounts);
   }
+  console.log(window.location.href);
+  //telling the browser to navigate to the new URL
+  window.location.href = ` ./try.html?accountNo=${accounts[index].accountNo}`;
 }
 
 function formToObject(form) {
@@ -41,18 +44,3 @@ function formToObject(form) {
   }
   return data;
 }
-// loginForm.addEventListener("change", (event) => {
-//   event.preventDefault();
-//   const formData = formToObject(loginForm);
-//   const username = formData.username;
-//   console.log(username);
-//   const userIndex = users.findIndex((user) => user.username === username);
-//   console.log(userIndex);
-//   if (userIndex !== -1) {
-//     users[userIndex].isLogged = true;
-//     localStorage.setItem("user", JSON.stringify(users));
-//     console.log(`${username} is now marked as logged in.`);
-//   } else {
-//     console.log("User not found.");
-//   }
-// });
