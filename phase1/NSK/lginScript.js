@@ -33,7 +33,7 @@ function submitForm(e) {
   }
   console.log(window.location.href);
   //telling the browser to navigate to the new URL
-  window.location.href = ` ./try.html?accountNo=${accounts[index].accountNo}`;
+  window.location.href = `./main.html?accountNo=${accounts[index].accountNo}`;
 }
 
 function formToObject(form) {
