@@ -237,6 +237,19 @@ hr{
 ul li a:hover{
     color: #8D029B;
 }
+
+
+/* .cart{
+    width: 400px;
+    background: #FAF8F0;
+    color:#1e1b1b;
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    inset: 0 0 0 left;
+
+} */
 @media only screen and (max-width: 1058px) {
    header{
     padding: 16px 60px;
@@ -280,6 +293,4 @@ ul li a:hover{
   }
 }
 @media only screen and (max-width: 614px) {
-
-
 }
