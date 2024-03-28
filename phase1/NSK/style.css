@@ -250,8 +250,6 @@ hr{
 ul li a:hover{
     color: #8D029B;
 }
-
-
 .cartSide{
     position:fixed;
     padding: 20px;
@@ -272,7 +270,7 @@ ul li a:hover{
     right: 20px;
     top: 20px;
 }
-.cartItems{
+/* .cartItems{
    display: flex;
    flex-direction: column;
    gap: 10px;
@@ -285,12 +283,8 @@ ul li a:hover{
     padding: 10px 5px;
     border-radius: 10px;
     border: 1.5px solid #8D029B;
-}
-.cartFooter{
-    position: absolute;
-    bottom: 10px;
-    width: 88%;
-}
+} */
+
 .totalAmount{
     display: flex;
     align-items: center;
@@ -303,14 +297,89 @@ ul li a:hover{
     font-size: 16px;
     font-weight: 400;
 }
-.Checkout{
-    width: 100%;
-    margin-top: 2rem;
+
+#purchase-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 1.5px solid #8D029B;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem
+}
+label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+label[for] {
+  cursor: pointer;
+}
+.cartFooter{
+    text-align: center;
+    padding: 80px 20px;
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #8D029B; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    margin: 6px;
+  }
+  
+ button:hover {  
+    background-color: #680371; 
+  }
+
+.item-container {
+    display: flex; 
+    flex-direction: column; 
+    width: 250px;
+    background-color:#f9f8f6;
+    margin: 10px;
     padding: 10px;
-    background:#E3DAC9;
-    color: #0b0a0a;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  }
+
+.price{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+label #quantity{
+    width: 50px;
+    margin-right: 5px;
+}
+
+
+.item-container h3{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.item-container .price, .item-container label{
+    font-weight: bold;
+}
+.item-container .price{
+    margin-bottom: 5px;
+}
+
+.item-container button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
     cursor: pointer;
 }
+
+.item-container button:hover{
+    background-color: #8D029B;
+}
+
+  
 @media only screen and (max-width: 1058px) {
    /* section{
 
