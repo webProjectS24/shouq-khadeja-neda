@@ -61,7 +61,6 @@ let search = document.querySelector(".search-box");
 document.querySelector("#search-icon").onclick = () => {
   search.classList.toggle("active");
 };
-
 // navlist
 let navlist = document.querySelector(".navlist");
 
@@ -143,3 +142,16 @@ function buyProduct(itemNo,sellerId){
        
 //     }
 }}
+
+// cart
+document.addEventListener('DOMContentLoaded', ()=>{
+    const cartItemList = document.querySelector('.cartItems');
+    const cartTotal = document.querySelector('.cartTotal');
+    const cartIcon = document.querySelector('#cart-icon');
+    const cartSide = document.getElementById('.cartSide');
+
+    let cartItems =[];
+    let totalAmount = 0;
+    
+
+})
