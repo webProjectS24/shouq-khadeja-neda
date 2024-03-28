@@ -63,6 +63,59 @@
     </main>
     <footer>
       <div class="footer-container">
+            </ul>
+
+            <div class="icons">
+                <i class="lnr lnr-magnifier" id="search-icon"></i>
+                <i class="lnr lnr-cart " id="cart-icon"><span>0</span></i>
+            </div>
+            <div class="search-box">
+                <input type="search" name="" id="search-input" placeholder="search Item">
+            </div>
+        </div>
+        <div id="uploadItem" class="hidden">
+            <h2>Upload Item</h2>
+            <form>
+                <label for="itemName"> Item Name</label>
+                <input type="text" id="itemName" name="itemName" required>
+                <label for="itemPrice"> Price:</label>
+                <input type="number" id="itemPrice" name="itemPrice" min="0" required>
+            </form>
+        </div>
+        <div id="showUploadedItems" class="hidden">
+            <h2>Uploaded Item</h2>
+            <ul id="uploadedItemsList"></ul>
+        </div>
+    </nav>
+
+</header>
+
+
+<main>
+
+<!-- cart -->
+
+    <div class="cartSide">
+        <div class="close">
+            <i><span class="lnr lnr-cross-circle"></span></i>
+            <div class="cartMenu">
+                <h3>My Cart</h3>
+                <div class="cartItems">item</div>
+            </div>
+
+            <div class="cartFooter">
+                <div class="totalAmount">
+                    <h5>Total</h5>
+                    <div class="cartTotal">$0.00</div>
+                </div>
+                <button class="Checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+
+    <div class="footer-container">
         <div class="row">
           <div class="coloum">
             <h3>Company</h3>
