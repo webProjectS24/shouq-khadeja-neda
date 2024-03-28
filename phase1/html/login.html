@@ -17,15 +17,15 @@
     <nav></nav>
     <main>
       <div class="login-container">
-        <form>
+        <form class="login-form" id="login-form">
           <span class="login-text">LOG IN</span>
           <div>
             <input
-              type="email"
-              id="email"
-              name="email"
-              class="email"
-              placeholder="Email Address"
+              type="text"
+              id="username"
+              name="username"
+              class="username"
+              placeholder="User name"
               required
             />
           </div>
@@ -39,13 +39,10 @@
               required
             />
           </div>
-
-          <div>
-            <a class="forgot-password" href="#">Forgot your password?</a>
-          </div>
           <button type="submit" class="login-btn">Login</button>
         </form>
       </div>
     </main>
   </body>
+  <script src="../NSK/lginScript.js"></script>
 </html>

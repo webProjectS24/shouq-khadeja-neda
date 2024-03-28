@@ -1,11 +1,27 @@
 
+
+body{
+  display: grid;
+  grid-template-rows: 0.2fr 2fr 0.2fr;
+  grid-template-areas: "header" "main" "footer";
+}
+header{
+  height: 75vh;
+  grid-area: header;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+}
 h1{
     text-align: center;
 }
 .items-container{
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 .item-card {
     background-color: #f9f9f9;
@@ -40,25 +56,33 @@ h1{
     color: #bbae7c;
     font-weight: bold;
   }
-  
+  .item-status{
+    font-weight: 900;
+    color: red;
+  }
   .item-quantity {
     font-size: 14px;
     color: #666;
   }
   .item-button {
-    width: 100%;
+    display:flex;
+    justify-content: center;
+    font-weight: 700;
     background-color: #bbae7c;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 8px 16px;
+    padding: 1px;
     cursor: pointer;
   }
   .item-button:hover {
     background-color: #fdd1e3;
     color: black;
   }
-  footer{
-    position:relative
+
+  @media screen and (min-width: 45rem){
+    header{
+      height: 0vh;
+    }
   }
  

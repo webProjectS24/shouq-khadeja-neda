@@ -19,6 +19,9 @@ body{
     overflow: auto;
    
 }
+header{
+    width: 100%;
+}
 nav{
     background-color:#E3DAC9 ;
     color:black;
@@ -169,7 +172,6 @@ nav{
 
 footer{
     bottom: 0;
-    position: absolute;
     width: 100%;
     flex-direction: column;
     padding: 100px 0 0;
@@ -227,6 +229,17 @@ hr{
     border-bottom: 1px solid #1e1b1b;
     margin: auto;
 }
+.buy-btn{
+    display:flex;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #bbae7c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 1px;
+    cursor: pointer;
+}
 .coloum h3:hover{
     color: #8D029B;
 
@@ -239,28 +252,69 @@ ul li a:hover{
 }
 
 
-/* .cart{
-    width: 400px;
-    background: #FAF8F0;
-    color:#1e1b1b;
+.item-container{
     position:fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    inset: 0 0 0 left;
-
-} */
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 100%;
+    top:0;
+    right:0;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-top-left-radius:20px;
+    border-bottom-left-radius: 20px;
+    background-color: #FAF8F0;
+    transition: right 0.3s ease-in-out;
+}
+.cart-close{
+    cursor: pointer;
+    right: 20px;
+    top: 20px;
+}
+.cartItems{
+    position: absolute;
+    bottom: 10px;
+    width: 88%;
+}
+.cartItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1.5px solid #8D029B;
+    padding: 15px 10px;
+}
+.cartF{
+    position: absolute;
+    bottom: 10px;
+    width: 88%;
+}
+.totalItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1.5px solid #8D029B;
+    padding: 15px 10px;
+}
+.cartTotal{
+    font-size: 16px;
+    font-weight: 400;
+}
+.checkout-btn{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 10px;
+}
 @media only screen and (max-width: 1058px) {
-   header{
-    padding: 16px 60px;
-   }
    /* section{
 
    } */
   }
-  @media only screen and (max-width: 991px) {
+  @media only screen and (max-width: 46rem) {
     header{
-     padding: 16px 4%;
+     height: 65vh;
     }
     /* section{
  
@@ -287,9 +341,6 @@ ul li a:hover{
    }
   .navlist.active{
     clip-path: circle(144% at 100 1%);
-  }
-  footer{
-    padding: 16px 4% 16px;
   }
 }
 @media only screen and (max-width: 614px) {

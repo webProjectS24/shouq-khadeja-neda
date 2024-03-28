@@ -4,6 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    height: 75vh;
+}
 main{
     text-align: center;
     display: flex;
@@ -11,23 +14,39 @@ main{
     align-items: center;
     .uploadForm{
         width: 60vw;
+    }   
+    a{
+        border: 1px solid black;
+        padding: 0rem 1rem;
+        background-color: #bbae7c;
+        color: black;
+        border-radius:10px ;
     }
-    form{ 
+    a:hover{
+        background-color: bisque;
+    }
+    .form{ 
         padding: 1rem 2rem;
         width: 100%;
         background-color: white;
         border: 1px solid black;
         border-radius: 2%;
-        button{
-        background-color: #bbae7c;
-        padding: 0.5rem 0.2rem;
-        width:30vw;
-        border-radius: 5px;
-        cursor: pointer;
-        }
-        button:hover{
-            background-color:bisque;
+        .form-btns{
+            display: flex;
+            justify-content: end;
+            gap: 1rem;
+            input[type="submit"]{
+            width: 70%;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ccc;
             color: black;
+            background-color: #bbae7c;
+            }
+            input[type="submit"]:hover {
+            background-color: bisque;
+            }
         }
         fieldset{
             border-radius: 2%;
@@ -44,14 +63,15 @@ main{
         }
         }
 }
-footer{
-    position: relative;
-}
 
 
-@media screen and (min-width: 40rem){
+
+@media screen and (min-width: 45rem){
+    header{
+        height: 10vh;
+    }
     main{
-        form {
+        .form {
             display: flex;
             flex-direction: column;
             padding: 2rem;
