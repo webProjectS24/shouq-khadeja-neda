@@ -14,6 +14,7 @@ async function loadLogins() {
   } else {
     accounts = JSON.parse(localStorage.accounts);
   }
+  // displayProducts(products);
 }
 
 function submitForm(e) {
@@ -28,12 +29,9 @@ function submitForm(e) {
     alert("User name not found or password is incorrect");
   } else {
     accounts[index].isLogged = true;
-    console.log(accounts[index].isLogged); //is working
     localStorage.accounts = JSON.stringify(accounts);
+    window.location.href = `../NSK/main.html?accountNo=${accounts[index].accountNo}`
   }
-  console.log(window.location.href);
-  //telling the browser to navigate to the new URL
-  window.location.href = `./main.html?accountNo=${accounts[index].accountNo}`;
 }
 
 function formToObject(form) {

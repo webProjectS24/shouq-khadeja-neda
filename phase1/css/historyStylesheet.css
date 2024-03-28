@@ -1,69 +1,15 @@
 
 
-body{
-  display: grid;
-  grid-template-rows: 0.2fr 2fr 0.2fr;
-  grid-template-areas: "header" "main" "footer";
-}
 header{
-  height: 75vh;
-  grid-area: header;
-}
-main{
-  grid-area: main;
-}
-footer{
-  grid-area: footer;
+  margin-bottom: 4rem;
 }
 h1{
     text-align: center;
 }
-.items-container{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-.item-card {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
-    padding: 1rem;
-    margin: 1rem;
-  }
-  .item-details{
-    display: flex;
-    flex-direction: column;
-  }
-  .item-image {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  .item-title {
-    align-self: center;
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  .item-description {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .item-price {
-    font-size: 16px;
-    color: #bbae7c;
-    font-weight: bold;
-  }
-  .item-status{
+.item-status{
     font-weight: 900;
     color: red;
-  }
-  .item-quantity {
-    font-size: 14px;
-    color: #666;
-  }
+}
   .item-button {
     display:flex;
     justify-content: center;
@@ -74,15 +20,71 @@ h1{
     border-radius: 5px;
     padding: 1px;
     cursor: pointer;
+    width: 80%;
   }
   .item-button:hover {
-    background-color: #fdd1e3;
+    background-color: bisque;
     color: black;
   }
+  .top{
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+    button {
+      padding: 1rem 2rem;
+      font-weight: 700;
+      background-color: #bbae7c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  .product-btns{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+  .hidden{
+    display: none;
+  }
+  input[type="number"]{
+      border: 1px solid black;
+      border-radius:5px;
+      height: 31px;
+      padding: 3px 7px;
+  }
+  input[type="submit"]{
+    border: 1px solid black;
+    border-radius:5px;
+    height: 31px;
+    padding: 3px 7px;
+    cursor: pointer;
+}
+.search-box.active{
+  top: 61%;
+  width: 95%;
+}
 
-  @media screen and (min-width: 45rem){
+
+  @media screen and (min-width: 50rem){
     header{
       height: 0vh;
+    }
+    .products-container{
+      margin-top: 1rem;
+    }
+    .search-box.active{
+      display: block;
+      top: 10%;
+      width: 20%;
+      transition:none;
+    }
+    .top{
+      margin: 0rem 1rem;
+      flex-direction: row;
+      gap: 1rem;
     }
   }
  

@@ -1,11 +1,9 @@
 [
   {
     "name": "Shouq",
-    "companyName": "Sefora",
     "username": "shouq123",
     "password": "pass123",
     "acctType": "admin",
-    "balance": 10000,
     "isLogged": false,
     "accountNo": 590
   },

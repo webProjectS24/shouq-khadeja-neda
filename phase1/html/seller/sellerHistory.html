@@ -13,38 +13,36 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="container nav-container">
-                <a href="#home" class="logo">
-                    <div>Make<span>up</span></div>
-                  
-                </a>
-                <i class="menu-btn">
-                    <span class="lnr lnr-menu"></span>
-                </i>
-                <ul class="navlist">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#login">Login</a></li>
-    
-                </ul>
-    
-                <div class="icons">
-                    <i class="lnr lnr-magnifier" id="search-icon"></i>
-                    <i class="lnr lnr-cart"><span>0</span></i>
-                </div>
-                <div class="search-box">
-                    <input type="search" name="" id="search-input" placeholder="search Item">
-                </div>
+    <nav>
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <div>Make<span>up</span></div>
+            </a>
+            <ul class="navlist">
+                <li><a class="active" id="main">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+
+            </ul>
+
+            <div class="icons">
+                <i class="lnr lnr-magnifier" id="search-icon"></i>
             </div>
-        </nav>
-    
-    </header>
+            <div class="search-box" id="search-box">
+                <input type="search" name="" id="search-input" placeholder="search Item">
+            </div>
+        </div>
+    </nav>
+
+</header>
     <main>
+        <div class="top">
         <h1>History of Uploaded Items</h1>
-        <div class="items-container" id="items-container">
+        <button id="upload-item">Upload Item</button>
+        </div>
+        <div class="products-container" id="products-container">
             <!-- <div class="item-card">
                 <img class="item-image" src="/images/360_F_551098311_prBL0mjBYvka289LvS9OnDIzDYjpNc8q.jpg" alt="Item 1">
                 <div class="item-details">
@@ -79,7 +77,7 @@
                 <a class="item-button" href="../seller/itemDetails.html">View Details</a> -->
             </div>
         </div>
-      
+
        
     </main>
     <footer>
@@ -98,7 +96,7 @@
                     <ul>
                         <li><a href="#"> shipping</a></li>
                         <li><a href="#"> returns</a></li>
-                        <li><a href="#"> order status</a></li>
+                        <li><a href="#""> order status</a></li>
                     </ul>
                 </div>
                 <div class="coloum">
