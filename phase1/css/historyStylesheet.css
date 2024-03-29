@@ -1,8 +1,3 @@
-
-
-header{
-  margin-bottom: 4rem;
-}
 h1{
     text-align: center;
 }
@@ -69,8 +64,8 @@ h1{
 
 
   @media screen and (min-width: 50rem){
-    header{
-      height: 0vh;
+    main{
+      margin-bottom: 14rem;
     }
     .products-container{
       margin-top: 1rem;
@@ -84,7 +79,7 @@ h1{
     .top{
       margin: 0rem 1rem;
       flex-direction: row;
-      gap: 1rem;
+      gap: 2rem;
     }
   }
  

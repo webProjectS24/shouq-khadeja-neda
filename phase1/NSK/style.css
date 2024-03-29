@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
+html{
+    height: 100%;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -17,7 +19,6 @@ body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 3;
     overflow: auto;
-   
 }
 header{
     width: 100%;
@@ -265,7 +266,7 @@ nav{
 /* footer */
 
 footer{
-    bottom: 0;
+    position: relative;
     width: 100%;
     flex-direction: column;
     padding: 100px 0 0;
@@ -508,14 +509,6 @@ label #quantity{
 .buying-container button:hover{
     background-color:#680371;
 }
-  
-@media only screen and (max-width: 1058px) {
-   /* section{
-
-   } */
-  }
-  @media only screen and (max-width: 46rem) {
-  }
 /* ======= */
   @media only screen and (max-width: 50rem) {
 /* >>>>>>> 644dd9f090b62ecd3b18b44a0c7e6f108b527af5 */
