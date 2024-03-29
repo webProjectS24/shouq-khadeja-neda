@@ -58,7 +58,7 @@ function productToHTML(product) {
                     <div class="product-info">
                         <img src="${product.imageUrl}" alt="" />
                         <h2 class="product-title">${product.name}</h2>
-                        <p class="product-price">${product.price}</p>
+                        <p class="product-price">${product.price} QAR</p>
                         <p class="product-description"><b>Description:</b> ${product.description}</p>
                         <p class="product-quantity"><b>Quantity:</b> ${product.quantity}</p>
                     </div>

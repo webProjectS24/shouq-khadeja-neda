@@ -43,18 +43,22 @@ function itemToHTML(item){
                 <p class="status">${item.quantity == 0? "Sold": "On Sale"}</p>
                 <h3>Sale History</h3>
                 <h4>Total number of items sold: ${item.sold}</h4>
+                <h4>Details About Buyers:</h4>
+                <ul class="saleHistory">
+                ${BuyersList(item.customers)}
+                </ul>
     </div>
     `
 }
-// function BuyersList(buyers,price){
-//     if (!buyers){
-//         return "nothing";
-//     }
-//     return buyers.map(buyer => `<li>Buyer: ${buyer.username}, Price: ${price} QR</li>`)
-// }
-// <!-- <ul class="saleHistory">
-// ${BuyersList(item.Buyers,item.price)}
-// </ul> -->
+function BuyersList(buyers){
+    let index = items.findIndex(item=>item.itemNo == itemNo)
+    if (buyers == []){
+        return "no Buyers";
+    }
+    else{
+    return buyers.map(buyer => `<li>Customer: ${buyer}, Price: ${items[index].price} QR</li>`)
+    }
+}
 function NavigateToSellerHistory(){
     window.location.href = `./sellerHistory.html?accountNo=${accountNo}`
 }

@@ -50,18 +50,12 @@ function purchaseItem(form) {
   const customerIndex = accounts.findIndex(
     (account) => account.accountNo == accountNo
   );
-  accounts[customerIndex].balance = 50;
   const sellerIndex = accounts.findIndex(
     (account) => account.accountNo == sellerId
   );
-
-  //chech is found
-  //   if (itemIndex !== -1 && customerIndex !== -1 && sellerIndex !== -1) {
-
-  console.log(itemIndex);
-  console.log(itemNo);
-  if (items[itemIndex].price > accounts[customerIndex].balance) {
+  if ((items[itemIndex].price*form.quantity) > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
+    console.log(accounts[customerIndex].balance);
     window.location.href = `./main.html?accountNo=${accountNo}`;
   } else if (form.quantity > items[itemIndex].quantity) {
     alert("Quantity is greater than the number of available items ");
@@ -69,12 +63,12 @@ function purchaseItem(form) {
   } else {
     items[itemIndex].sold += form.quantity;
     items[itemIndex].quantity -= form.quantity;
-    accounts[customerIndex].balance -= items[itemIndex].price;
-    accounts[sellerIndex].balance += items[itemIndex].price;
+    accounts[customerIndex].balance -= (items[itemIndex].price * form.quantity);
+    accounts[sellerIndex].balance += (items[itemIndex].price * form.quantity);
     if (!accounts[customerIndex].items) accounts[customerIndex].items = [];
     accounts[customerIndex].items.push(items[itemIndex]);
-    if (!accounts[sellerIndex].customers) accounts[sellerIndex].customers = [];
-    accounts[sellerIndex].customers.push(accounts[customerIndex].username);
+    if (!items[itemIndex].customers) items[itemIndex].customers = [];
+    items[itemIndex].customers.push(accounts[customerIndex].username);
     localStorage.accounts = JSON.stringify(accounts);
 
     localStorage.items = JSON.stringify(items);
