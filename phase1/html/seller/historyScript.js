@@ -1,16 +1,20 @@
-const itemsContainer = document.querySelector("#items-container");
+const itemsContainer = document.querySelector("#products-container");
 const itemCard = document.querySelector("#item-card");
+const uploaditem = document.querySelector("#upload-item");
+const main = document.querySelector("#main");
+let search = document.querySelector("#search-box");
+let searchinput = document.querySelector("#search-input");
 const itemJson = "../data/item.json";
 let items = [];
 let accounts = [];
 let accountNo;
+let itemNo;
 document.addEventListener("DOMContentLoaded", function () {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   accountNo = urlParams.get("accountNo");
   loadItems();
 });
-
 async function loadItems() {
   if (!localStorage.items) {
     const data = await fetch(itemJson);
@@ -19,10 +23,7 @@ async function loadItems() {
   } else {
     items = JSON.parse(localStorage.items);
   }
-  if (!checkAccountisLogged(accountNo)) {
-    return;
-  }
-  let filteredItems = items.find((item) => item.sellerId == accountNo);
+  let filteredItems = items.filter((item) => item.sellerId == accountNo);
   displayItems(filteredItems);
 }
 
