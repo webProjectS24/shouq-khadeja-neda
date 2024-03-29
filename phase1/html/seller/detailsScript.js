@@ -45,7 +45,7 @@ function itemToHTML(item){
                 <h4>Total number of items sold: ${item.sold}</h4>
                 <h4>Details About Buyers:</h4>
                 <ul class="saleHistory">
-                ${BuyersList(item.customers)}
+                ${item.customers? BuyersList(item.customers): "No Buyers"}
                 </ul>
     </div>
     `
