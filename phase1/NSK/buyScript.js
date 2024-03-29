@@ -48,7 +48,6 @@ function purchaseItem(form) {
   const customerIndex = accounts.findIndex(
     (account) => account.accountNo == accountNo
   );
-  accounts[customerIndex].balance = 50;
   const sellerIndex = accounts.findIndex(
     (account) => account.accountNo == sellerId
   );
@@ -58,6 +57,7 @@ function purchaseItem(form) {
 
   if (items[itemIndex].price > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
+    console.log(accounts[customerIndex].balance);
     window.location.href = `./main.html?accountNo=${accountNo}`;
   } else if (form.quantity > items[itemIndex].quantity) {
     alert("Quantity is greater than the number of available items ");
@@ -65,8 +65,8 @@ function purchaseItem(form) {
   } else {
     items[itemIndex].sold += form.quantity;
     items[itemIndex].quantity -= form.quantity;
-    accounts[customerIndex].balance -= items[itemIndex].price;
-    accounts[sellerIndex].balance += items[itemIndex].price;
+    accounts[customerIndex].balance -= items[itemIndex].price * form.quantity;
+    accounts[sellerIndex].balance += items[itemIndex].price * form.quantity;
     if (!accounts[customerIndex].items) accounts[customerIndex].items = [];
     accounts[customerIndex].items.push(items[itemIndex]);
 
