@@ -143,15 +143,67 @@ function buyProduct(itemNo,sellerId){
 //     }
 }}
 
-// cart
-document.addEventListener('DOMContentLoaded', ()=>{
-    const cartItemList = document.querySelector('.cartItems');
-    const cartTotal = document.querySelector('.cartTotal');
-    const cartIcon = document.querySelector('#cart-icon');
-    const cartSide = document.getElementById('.cartSide');
 
-    let cartItems =[];
-    let totalAmount = 0;
+// item
+// let accounts=[];
+// try{
+//     const storedAcc = localStorage.getItem('accounts');
+//     if(storedAcc){
+//         accounts=JSON.parse(storedAcc);
+//     }
+// } catch(error){
+//     console.error('error from localStorage',error);
+// }
+// const buyButton = document.getElementById('');
+
+// cart
+// document.addEventListener('DOMContentLoaded', ()=>{
+//     const cartItemList = document.querySelector('.cartItems');
+//     const cartTotal = document.querySelector('.cartTotal');
+//     const cartIcon = document.querySelector('#cart-icon');
+//     const cartSide = document.getElementById('.cartSide');
+
+//     let cartItems =[];
+//     let totalAmount = 0;
     
 
-})
+// })
+
+// chechout 
+
+const itemIndex = items.findIndex(item => item.itemNo === itemNo);
+const customer = accounts.find(account => account.accountNo === accountNo);
+const sellerIndex = accounts.findIndex( account => account.accountNo=== sellerId);
+
+//chech is found
+if(itemIndex !== -1 && customer && sellerIndex !== -1){
+    if(items[itemIndex].price > customer.balance)
+    alert("Your balance is not enough!");
+return;
+} else if(quantity > items[itemIndex].quantity){
+    alert("Quantity is greater than the number of available items ");
+    return;
+}
+
+try{
+    items[itemIndex].sold += quantity;
+    items[itemIndex].quantity -= quantity;
+
+    if(items[itemIndex].quantity === 0 ){
+        item[itemIndex].status = "sold";
+    }
+    customer.items.push(items[index]);
+
+    if(accounts[sellerIndex].hasOwnProperty('soldItem')){
+        accounts[sellerIndex].soldItem.push(items[itemIndex])
+    } else{
+        accounts[sellerIndex].soldItem = [items[itemIndex]];
+    }
+
+    console.log("Successful puurchase");
+} catch(error){
+    console.error("Error" , error);
+    alert("Please try again later");
+
+}
+
