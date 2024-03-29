@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <main>
+      <!-- buying -->
+      <div class="buying-container">
+        <h2>Order Details</h2>
+        <form id="order-form">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" required />
+
+          <label for="shipping-address">Shipping Address:</label>
+          <textarea
+            id="shipping-address"
+            name="shipping_address"
+            rows="4"
+            required
+          ></textarea>
+
+          <label for="phone-number">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone_number"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="xxx-xxx-xxxx"
+            required
+          />
+
+          <button type="submit">Submit Order</button>
+        </form>
+      </div>
+    </main>
     <script src="./buyScript.js"></script>
-</body>
+  </body>
 </html>
