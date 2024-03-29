@@ -1,6 +1,7 @@
 const productsContainter = document.querySelector("#products-container");
 const sellerbtns = document.querySelector("#seller-btns");
 const logoutbtn = document.querySelector("#logout");
+const purchasehistory = document.querySelector("#history");
 let search = document.querySelector(".search-box");
 let searchinput = document.querySelector("#search-input");
 let uploadProduct = document.querySelector("#upload-product");
@@ -70,8 +71,12 @@ function productToHTML(product) {
 //seller btns
 uploadProduct.addEventListener("click", navigateToForm);
 ProductsHistory.addEventListener("click", navigateToHistory);
+purchasehistory.addEventListener("click", ToHistory);
 function navigateToForm() {
   window.location.href = `../html/seller/uploadItem.html?accountNo=${accountNo}`;
+}
+function ToHistory() {
+  window.location.href = `./History.html?accountNo=${accountNo}`;
 }
 //search;
 searchinput.addEventListener("input", filteredProductsList);

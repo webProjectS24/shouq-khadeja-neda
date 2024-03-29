@@ -15,10 +15,8 @@ const form = document.querySelector("#order-form");
 form.addEventListener("submit", buyproduct);
 
 async function buyproduct(e) {
-  console.log("enter");
   e.preventDefault();
   const buyitem = formToObject(e.target);
-
   if (!localStorage.accounts) {
     const data = await fetch(userJson);
     accounts = await data.json();
@@ -58,8 +56,6 @@ function purchaseItem(form) {
   //chech is found
   //   if (itemIndex !== -1 && customerIndex !== -1 && sellerIndex !== -1) {
 
-  console.log(itemIndex);
-  console.log(itemNo);
   if (items[itemIndex].price > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
     window.location.href = `./main.html?accountNo=${accountNo}`;
@@ -73,6 +69,15 @@ function purchaseItem(form) {
     accounts[sellerIndex].balance += items[itemIndex].price;
     if (!accounts[customerIndex].items) accounts[customerIndex].items = [];
     accounts[customerIndex].items.push(items[itemIndex]);
+
+    let targetItem = accounts[customerIndex].items.find(
+      (item) => item.itemNo == itemNo
+    );
+    if (targetItem) {
+      targetItem.purchasedQuantity = form.quantity;
+    }
+    console.log(targetItem);
+
     if (!accounts[sellerIndex].customers) accounts[sellerIndex].customers = [];
     accounts[sellerIndex].customers.push(accounts[customerIndex].username);
     localStorage.accounts = JSON.stringify(accounts);
