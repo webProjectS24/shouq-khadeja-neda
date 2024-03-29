@@ -15,10 +15,8 @@ const form = document.querySelector("#order-form");
 form.addEventListener("submit", buyproduct);
 
 async function buyproduct(e) {
-  console.log("enter");
   e.preventDefault();
   const buyitem = formToObject(e.target);
-
   if (!localStorage.accounts) {
     const data = await fetch(userJson);
     accounts = await data.json();
@@ -53,7 +51,11 @@ function purchaseItem(form) {
   const sellerIndex = accounts.findIndex(
     (account) => account.accountNo == sellerId
   );
-  if ((items[itemIndex].price*form.quantity) > accounts[customerIndex].balance) {
+
+  //chech is found
+  //   if (itemIndex !== -1 && customerIndex !== -1 && sellerIndex !== -1) {
+
+  if (items[itemIndex].price > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
     console.log(accounts[customerIndex].balance);
     window.location.href = `./main.html?accountNo=${accountNo}`;
@@ -63,12 +65,21 @@ function purchaseItem(form) {
   } else {
     items[itemIndex].sold += form.quantity;
     items[itemIndex].quantity -= form.quantity;
-    accounts[customerIndex].balance -= (items[itemIndex].price * form.quantity);
-    accounts[sellerIndex].balance += (items[itemIndex].price * form.quantity);
+    accounts[customerIndex].balance -= items[itemIndex].price * form.quantity;
+    accounts[sellerIndex].balance += items[itemIndex].price * form.quantity;
     if (!accounts[customerIndex].items) accounts[customerIndex].items = [];
     accounts[customerIndex].items.push(items[itemIndex]);
-    if (!items[itemIndex].customers) items[itemIndex].customers = [];
-    items[itemIndex].customers.push(accounts[customerIndex].username);
+
+    let targetItem = accounts[customerIndex].items.find(
+      (item) => item.itemNo == itemNo
+    );
+    if (targetItem) {
+      targetItem.purchasedQuantity = form.quantity;
+    }
+    console.log(targetItem);
+
+    if (!accounts[sellerIndex].customers) accounts[sellerIndex].customers = [];
+    accounts[sellerIndex].customers.push(accounts[customerIndex].username);
     localStorage.accounts = JSON.stringify(accounts);
 
     localStorage.items = JSON.stringify(items);
