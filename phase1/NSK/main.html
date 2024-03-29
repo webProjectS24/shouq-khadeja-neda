@@ -16,47 +16,29 @@
         <div class="container nav-container">
             <a href="#home" class="logo">
                 <div>Make<span>up</span></div>
-              
             </a>
-            <i class="menu-btn" id="menu-icon">
-                <span class="lnr lnr-menu"></span>
-            </i>
             <ul class="navlist">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#shop">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#login">Login</a></li>
+                <li><a href="./login.html">Login</a></li>
 
             </ul>
 
             <div class="icons">
                 <i class="lnr lnr-magnifier" id="search-icon"></i>
-                <i class="lnr lnr-cart " id="cart-icon"><span>0</span></i>
             </div>
             <div class="search-box">
                 <input type="search" name="" id="search-input" placeholder="search Item">
             </div>
         </div>
-        <div id="uploadItem" class="hidden">
-            <h2>Upload Item</h2>
-            <form>
-                <label for="itemName"> Item Name</label>
-                <input type="text" id="itemName" name="itemName" required>
-                <label for="itemPrice"> Price:</label>
-                <input type="number" id="itemPrice" name="itemPrice" min="0" required>
-            </form>
-        </div>
-        <div id="showUploadedItems" class="hidden">
-            <h2>Uploaded Item</h2>
-            <ul id="uploadedItemsList"></ul>
-        </div>
     </nav>
 
 </header>
 
-
 <main>
+
 
 
 
@@ -120,6 +102,22 @@
         </form>
       </div>
 
+
+
+    <section class="products" id="products">
+        <div class="top">
+         <h2>Best Seller Products</h2>
+         <button class="hidden" id="logout">Logout</button>
+            <div class="seller-btns hidden" id="seller-btns">
+                <button id="Products-history">Uploaded Products History</button>
+                <button id="upload-product">Upload Product</button>
+            </div>
+        </div>
+        <div class="products-container" id="products-container">
+          
+        </div>
+
+    </section>
 
 </main>
 <footer>

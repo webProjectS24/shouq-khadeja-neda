@@ -14,6 +14,7 @@ async function loadLogins() {
   } else {
     accounts = JSON.parse(localStorage.accounts);
   }
+  // displayProducts(products);
 }
 
 function submitForm(e) {
@@ -28,8 +29,8 @@ function submitForm(e) {
     alert("User name not found or password is incorrect");
   } else {
     accounts[index].isLogged = true;
-    console.log(accounts[index].isLogged); //is working
     localStorage.accounts = JSON.stringify(accounts);
+    window.location.href = `../NSK/main.html?accountNo=${accounts[index].accountNo}`
   }
 }
 
@@ -41,18 +42,3 @@ function formToObject(form) {
   }
   return data;
 }
-// loginForm.addEventListener("change", (event) => {
-//   event.preventDefault();
-//   const formData = formToObject(loginForm);
-//   const username = formData.username;
-//   console.log(username);
-//   const userIndex = users.findIndex((user) => user.username === username);
-//   console.log(userIndex);
-//   if (userIndex !== -1) {
-//     users[userIndex].isLogged = true;
-//     localStorage.setItem("user", JSON.stringify(users));
-//     console.log(`${username} is now marked as logged in.`);
-//   } else {
-//     console.log("User not found.");
-//   }
-// });
