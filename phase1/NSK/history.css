@@ -3,36 +3,38 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
-.hidden {
-  display: none;
-}
+
 .history-container {
+  font-family: roboto, Courier, monospace;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-template-rows: auto;
-  gap: 1rem;
-
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   .card {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     text-align: center;
     margin: 10px;
-    transition: 0.3s;
     border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 
-    img {
-      width: 100%;
-      flex: 1;
+    &:hover {
+      transform: scale(1.015) rotate(0.25deg);
     }
+  }
+  img {
+    border-radius: 2%;
+    width: 100%;
+    flex: 1;
+  }
 
-    p {
-      width: 100%;
-      text-align: justify;
-    }
+  p {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 40rem) {
+  .history-container {
+    grid-template-columns: 1fr;
   }
 }

@@ -42,8 +42,6 @@ function formToObject(form) {
   return data;
 }
 function purchaseItem(form) {
-  console.log("enter");
-  console.log(items);
   const itemIndex = items.findIndex((item) => item.itemNo == itemNo);
   const customerIndex = accounts.findIndex(
     (account) => account.accountNo == accountNo
@@ -53,11 +51,10 @@ function purchaseItem(form) {
   );
 
   //chech is found
-  //   if (itemIndex !== -1 && customerIndex !== -1 && sellerIndex !== -1) {
 
   if (items[itemIndex].price > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
-    console.log(accounts[customerIndex].balance);
+
     window.location.href = `./main.html?accountNo=${accountNo}`;
   } else if (form.quantity > items[itemIndex].quantity) {
     alert("Quantity is greater than the number of available items ");
@@ -67,7 +64,9 @@ function purchaseItem(form) {
     items[itemIndex].quantity -= form.quantity;
     accounts[customerIndex].balance -= items[itemIndex].price * form.quantity;
     accounts[sellerIndex].balance += items[itemIndex].price * form.quantity;
+
     if (!accounts[customerIndex].items) accounts[customerIndex].items = [];
+
     accounts[customerIndex].items.push(items[itemIndex]);
 
     let targetItem = accounts[customerIndex].items.find(
@@ -75,11 +74,15 @@ function purchaseItem(form) {
     );
     if (targetItem) {
       targetItem.purchasedQuantity = form.quantity;
+      let now = new Date();
+      targetItem.purchaseDate = formatDate(now);
+      targetItem.purchaseTime = formatTime(now);
     }
-    console.log(targetItem);
 
     if (!accounts[sellerIndex].customers) accounts[sellerIndex].customers = [];
+
     accounts[sellerIndex].customers.push(accounts[customerIndex].username);
+
     localStorage.accounts = JSON.stringify(accounts);
 
     localStorage.items = JSON.stringify(items);
@@ -87,5 +90,17 @@ function purchaseItem(form) {
     alert("Successful puurchase");
     window.location.href = `./main.html?accountNo=${accountNo}`;
   }
-  //   }
+}
+
+function formatTime(date) {
+  let h = date.getHours();
+  let m = date.getMinutes();
+  return `${h}:${m}`;
+}
+
+function formatDate(date) {
+  let d = date.getDate();
+  let m = date.getMonth() + 1;
+  let y = date.getFullYear();
+  return `${d}-${m}-${y}`;
 }

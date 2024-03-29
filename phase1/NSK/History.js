@@ -1,5 +1,6 @@
 //items in the history container to add the items to that div
 const container = document.querySelector(".history-container");
+
 //items link of the json file to display the items of a specified customer
 let accountNo;
 let accounts = [];
@@ -23,11 +24,9 @@ async function loadCustomers() {
 
 function displayitems() {
   const customer = accounts.find((account) => account.accountNo == accountNo);
-  console.log(customer);
   if (!customer.items) alert("No purchased items yet");
   else {
     const items = customer.items;
-    console.log(items);
     const htmlForItems = items.map((item) => itemToHTML(item)).join(" ");
     container.innerHTML = htmlForItems;
   }
@@ -36,11 +35,21 @@ function displayitems() {
 function itemToHTML(item) {
   return `
     <div class="card">
+    <div class="card-img">
       <img src="${item.imageUrl}">
+    </div>
+    <div class="card-text">
       <h2 class="title">${item.name}</h2>
       <p class="description">${item.description}</p>
       <p class="price">QTR ${item.price}</p>
+      <p class="price">Date: ${item.purchaseDate} at ${item.purchaseTime}</p>
       <p class="quantity">purchased Quantity: ${item.purchasedQuantity}</p>
+      </div>
     </div>
   `;
+}
+const main = document.querySelector("#main");
+main.addEventListener("click", goToMain);
+function goToMain() {
+  window.location.href = `../../NSK/main.html?accountNo=${accountNo}`;
 }
