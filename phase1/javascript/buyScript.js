@@ -80,7 +80,8 @@ function purchaseItem(form) {
       targetItem.purchaseTime = formatTime(now);
     }
 
-    if (!accounts[sellerIndex].customers) accounts[sellerIndex].customers = [];
+    if (!items[itemIndex].customers) items[itemIndex].customers = [];
+    items[itemIndex].customers.push(accounts[customerIndex].username);
 
     accounts[sellerIndex].customers.push(accounts[customerIndex].username);
 
