@@ -1,3 +1,4 @@
+const main = document.querySelector("#main");
 let accountNo;
 let sellerId;
 let itemNo;
@@ -106,3 +107,8 @@ function formatDate(date) {
   let y = date.getFullYear();
   return `${d}-${m}-${y}`;
 }
+main.addEventListener("click", goToMain);
+function goToMain() {
+  window.location.href = `/main.html?accountNo=${accountNo}`;
+}
+

@@ -26,7 +26,6 @@ header {
 nav {
   background-color: #e3dac9;
   color: black;
-  height: 11vh;
 }
 .nav-container {
   display: flex;
@@ -127,6 +126,7 @@ nav {
 }
 
 .search-box {
+  padding-top: 1rem;
   display: none;
   position: absolute;
   /* hidded the search bar */
@@ -186,7 +186,7 @@ nav {
 }
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
   margin: 0rem 1rem;
@@ -221,7 +221,7 @@ nav {
       img {
         width: 100%;
         border-radius: 10px;
-        height: 400px;
+        height: 300px;
         box-shadow: 0 2px 4px rgba(165, 64, 64, 0.5);
       }
 
@@ -459,7 +459,8 @@ label #quantity{
   border: 1px solid #000;
   background-color: #ffffff;
   padding: 15px;
-  margin: 10px;
+  margin: 2rem 1rem 1rem 2rem;
+ 
   border-radius: 5px;
 }
 
@@ -502,39 +503,57 @@ label #quantity{
   background-color: #680371;
 }
 /* ======= */
-@media only screen and (max-width: 50rem) {
-  /* >>>>>>> 644dd9f090b62ecd3b18b44a0c7e6f108b527af5 */
-  header {
-    height: 65vh;
+/* Existing CSS */
+
+@media only screen and (max-width: 44rem) {
+  .nav-container {
+    width: 100%;
+    align-items: flex-start; 
   }
-  /* section{
- 
-    } */
+  .nav-container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "logo search" "navlist navlist";
+  }
+
+  .logo {
+    padding: 1rem;
+    grid-area: logo;
+    order: 1; 
+  }
+
   .navlist {
-    position: absolute;
-    top: 8%;
-    left: 0;
-    right: 0;
+    width: 100%;
+    background-color: white;
+    grid-area: navlist;
+    order: 3;
     display: flex;
     flex-direction: column;
-    background: white;
-    padding: 20px;
-    transition: 0.4s all linear;
-    text-align: center;
-    clip-path: circle(144% at 100 1%);
+    align-items: center;
   }
-  .navlist.active {
-    clip-path: circle(144% at 100 1%);
+
+  .icons {
+    padding-bottom: 1rem;
+    order: 2; /* Set search icon to be the second item */
+    margin-top: 10px; /* Add some margin */
+    align-self: flex-end; /* Align icon to the end (right) */
   }
-  .search-box.active {
-    top: 61%;
-    width: 95%;
-  }
-  .products {
-    .top {
-      .seller-btns {
-        align-self: center;
+  .icon-search{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    grid-area: search;
+    position: relative;
+    .search-box{
+      margin-right: 1rem;
+      padding: 0rem;
+      input{
+        padding: 1rem;
       }
     }
   }
 }
+
+

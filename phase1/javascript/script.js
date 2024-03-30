@@ -100,7 +100,7 @@ function navigateToHistory() {
   window.location.href = `/html/seller/sellerHistory.html?accountNo=${accountNo}`;
 }
 function buyProduct(itemNo, sellerId) {
-  let index = accounts.findIndex((account) => account.isLogged == true);
+  let index = accounts.findIndex((account) => account.accountNo == accountNo);
   if (index == -1) {
     alert("please log in first");
     window.location.href = `/html/login.html`;

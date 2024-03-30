@@ -2,8 +2,8 @@
 body {
   padding: 0;
   background-color: #f4f4f4;
+  height: 100%;
 }
-
 .history-container {
   font-family: roboto, Courier, monospace;
   display: grid;
@@ -41,4 +41,5 @@ body {
   .history-container {
     grid-template-columns: 1fr;
   }
+
 }
