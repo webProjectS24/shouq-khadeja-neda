@@ -23,48 +23,41 @@
   </head>
   <body>
     <header>
-      
-    <nav>
+      <nav>
         <div class="container nav-container">
           <a href="#home" class="logo">
-            
             <div>Make<span>up</span></div>
           </a>
           <ul class="navlist">
             <li>
-              <img src="">
+              <img src="" />
               <a href="#home" class="active">Home</a>
             </li>
             <li><a href="#about">About</a></li>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#" class="history" id="history">History</a></li>
-            <li><a href="/html/login.html">Login</a></li>
+            <li><a href="#" id="login">Login</a></li>
           </ul>
           <div class="icon-search">
-          <div class="search-box">
-            <input
-              type="search"
-              name=""
-              id="search-input"
-              placeholder="search Item"
-            />
+            <div class="search-box">
+              <input
+                type="search"
+                name=""
+                id="search-input"
+                placeholder="search Item"
+              />
+            </div>
+            <div class="icons">
+              <i class="lnr lnr-magnifier" id="search-icon"></i>
+            </div>
           </div>
-          <div class="icons">
-            <i class="lnr lnr-magnifier" id="search-icon"></i>
-          </div>
-        </div>
         </div>
       </nav>
+    </header>
 
-</header>
-
-<main>
-
-
-
-
-    <!-- item
+    <main>
+      <!-- item
     <div class="item-container">
         <h3>Item Name</h3>
         <span class="price">Price:</span>  
@@ -73,10 +66,9 @@
     <button>Add to Cart</button>
       </div> -->
 
+      <!-- cart -->
 
-<!-- cart -->
-
-    <!-- <div class="cartSide">
+      <!-- <div class="cartSide">
         <div class="close">
             <i><span class="lnr lnr-cross-circle"></span></i>
             <div class="cartMenu">
@@ -103,13 +95,7 @@
         </div>
     </div> -->
 
-
-
-  
-
-
-
-    <section class="products" id="products">
+      <section class="products" id="products">
         <div class="top">
           <h2>Best Seller Products</h2>
           <button class="hidden" id="logout">Logout</button>
@@ -118,16 +104,11 @@
             <button id="upload-product">Upload Product</button>
           </div>
         </div>
-        <div class="products-container" id="products-container">
-          
-        </div>
-
-    </section>
-
-</main>
-<footer>
-
-    <div class="footer-container">
+        <div class="products-container" id="products-container"></div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
         <div class="row">
           <div class="coloum">
             <h3>Company</h3>

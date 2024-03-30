@@ -81,7 +81,6 @@ function purchaseItem(form) {
     }
 
     if (!accounts[sellerIndex].customers) accounts[sellerIndex].customers = [];
-
     accounts[sellerIndex].customers.push(accounts[customerIndex].username);
 
     localStorage.accounts = JSON.stringify(accounts);
@@ -111,4 +110,3 @@ main.addEventListener("click", goToMain);
 function goToMain() {
   window.location.href = `/main.html?accountNo=${accountNo}`;
 }
-

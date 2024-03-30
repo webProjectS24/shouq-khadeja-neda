@@ -460,7 +460,7 @@ label #quantity{
   background-color: #ffffff;
   padding: 15px;
   margin: 2rem 1rem 1rem 2rem;
- 
+
   border-radius: 5px;
 }
 
@@ -508,9 +508,9 @@ label #quantity{
 @media only screen and (max-width: 44rem) {
   .nav-container {
     width: 100%;
-    align-items: flex-start; 
+    align-items: flex-start;
   }
-  .nav-container{
+  .nav-container {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
@@ -520,7 +520,7 @@ label #quantity{
   .logo {
     padding: 1rem;
     grid-area: logo;
-    order: 1; 
+    order: 1;
   }
 
   .navlist {
@@ -539,21 +539,19 @@ label #quantity{
     margin-top: 10px; /* Add some margin */
     align-self: flex-end; /* Align icon to the end (right) */
   }
-  .icon-search{
+  .icon-search {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 1rem;
     grid-area: search;
     position: relative;
-    .search-box{
+    .search-box {
       margin-right: 1rem;
       padding: 0rem;
-      input{
+      input {
         padding: 1rem;
       }
     }
   }
 }
-
-

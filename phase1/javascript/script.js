@@ -2,6 +2,7 @@ const productsContainter = document.querySelector("#products-container");
 const sellerbtns = document.querySelector("#seller-btns");
 const logoutbtn = document.querySelector("#logout");
 const purchasehistory = document.querySelector("#history");
+const login = document.querySelector("#login");
 let search = document.querySelector(".search-box");
 let searchinput = document.querySelector("#search-input");
 let uploadProduct = document.querySelector("#upload-product");
@@ -45,7 +46,9 @@ async function loadProducts() {
     products = JSON.parse(localStorage.items);
   }
   let filteredProducts = products.filter((product) => product.quantity != 0);
-  let filtersellerPorducts = filteredProducts.filter(product => product.sellerId != accountNo)
+  let filtersellerPorducts = filteredProducts.filter(
+    (product) => product.sellerId != accountNo
+  );
   displayProducts(filtersellerPorducts);
 }
 function displayProducts(products) {
@@ -73,11 +76,25 @@ function productToHTML(product) {
 uploadProduct.addEventListener("click", navigateToForm);
 ProductsHistory.addEventListener("click", navigateToHistory);
 purchasehistory.addEventListener("click", ToHistory);
+login.addEventListener("click", navigateToLogin);
+function navigateToLogin() {
+  if (!accountNo) {
+    window.location.href = `/html/login.html`;
+  } else {
+    alert("You are already loged in");
+    window.location.href = `/main.html?accountNo=${accountNo}`;
+  }
+}
 function navigateToForm() {
   window.location.href = `/html/seller/uploadItem.html?accountNo=${accountNo}`;
 }
 function ToHistory() {
-  window.location.href = `/html/customer/History.html?accountNo=${accountNo}`;
+  if (!accountNo) {
+    alert("Please login first");
+    window.location.href = `/html/login.html`;
+  } else {
+    window.location.href = `/html/customer/History.html?accountNo=${accountNo}`;
+  }
 }
 //search;
 searchinput.addEventListener("input", filteredProductsList);
