@@ -1,6 +1,7 @@
 [
   {
     "name": "Shouq",
+    "surname":"AbdulKareem",
     "username": "shouq123",
     "password": "pass123",
     "acctType": "admin",
@@ -9,6 +10,7 @@
   },
   {
     "name": "Nada",
+    "surname":"Mohammad",
     "companyName": "Fenty Beauty",
     "username": "nada123",
     "password": "pass123",
@@ -19,6 +21,7 @@
   },
   {
     "name": "Khadeja",
+    "surname":"Anas",
     "username": "Khadeja123",
     "password": "pass123",
     "acctType": "customer",
@@ -28,6 +31,7 @@
   },
   {
     "name": "Fatima",
+    "surname":"Ahmad",
     "username": "Fatima123",
     "password": "pass123",
     "acctType": "customer",
@@ -37,6 +41,7 @@
   },
   {
     "name": "Sara",
+    "surname":"Ali",
     "username": "sara123",
     "password": "pass123",
     "acctType": "seller",
