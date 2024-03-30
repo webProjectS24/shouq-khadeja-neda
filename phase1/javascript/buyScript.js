@@ -97,7 +97,7 @@ function formatTime(date) {
   let m = date.getMinutes();
   let formatingH = h % 12 || 12;
   let ampm = formatingH < 12 ? "PM" : "AM";
-  return `${h}:${m} ${ampm}`;
+  return `${formatingH}:${m} ${ampm}`;
 }
 
 function formatDate(date) {
