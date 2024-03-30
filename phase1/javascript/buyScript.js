@@ -110,4 +110,3 @@ main.addEventListener("click", goToMain);
 function goToMain() {
   window.location.href = `/main.html?accountNo=${accountNo}`;
 }
-

@@ -42,3 +42,9 @@ function formToObject(form) {
   }
   return data;
 }
+
+const history = document.querySelector("#history");
+history.addEventListener("click", ToHistory);
+function ToHistory() {
+  alert("you need to log in");
+}
