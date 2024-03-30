@@ -50,12 +50,8 @@ function itemToHTML(item) {
             </form>
         </div>
         <div class="product-btns">
-        <a class="item-button" href="./itemDetails.html?itemNo=${
-          item.itemNo
-        }&accountNo=${accountNo}">View Details</a>
-        <a class="item-button" onclick="update(${
-          item.itemNo
-        },${accountNo})">Update Quantity</a>
+        <a class="item-button" href="./itemDetails.html?itemNo=${item.itemNo}&accountNo=${accountNo}">View Details</a>
+        <a class="item-button" onclick="update(${item.itemNo})">Update Quantity</a>
         </div>
     </div>
     `;

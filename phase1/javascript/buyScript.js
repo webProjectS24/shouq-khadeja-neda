@@ -83,8 +83,6 @@ function purchaseItem(form) {
     if (!items[itemIndex].customers) items[itemIndex].customers = [];
     items[itemIndex].customers.push(accounts[customerIndex].username);
 
-    accounts[sellerIndex].customers.push(accounts[customerIndex].username);
-
     localStorage.accounts = JSON.stringify(accounts);
 
     localStorage.items = JSON.stringify(items);
