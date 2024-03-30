@@ -31,6 +31,10 @@ body {
   p {
     text-align: justify;
   }
+  .date {
+    color: grey;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 40rem) {

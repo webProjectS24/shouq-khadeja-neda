@@ -95,7 +95,9 @@ function purchaseItem(form) {
 function formatTime(date) {
   let h = date.getHours();
   let m = date.getMinutes();
-  return `${h}:${m}`;
+  let formatingH = h % 12 || 12;
+  let ampm = formatingH < 12 ? "AM" : "PM";
+  return `${h}:${m} ${ampm}`;
 }
 
 function formatDate(date) {

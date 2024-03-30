@@ -40,10 +40,10 @@ function itemToHTML(item) {
     </div>
     <div class="card-text">
       <h2 class="title">${item.name}</h2>
-      <p class="description">${item.description}</p>
-      <p class="price">QTR ${item.price}</p>
-      <p class="price">Date: ${item.purchaseDate} at ${item.purchaseTime}</p>
-      <p class="quantity">purchased Quantity: ${item.purchasedQuantity}</p>
+      <p class="description"> <b>Description:</b> ${item.description}</p>
+      <p class="price"><b>Price:</b> QTR ${item.price}</p>
+      <p class="quantity"><b>purchased Quantity:</b> ${item.purchasedQuantity}</p>
+      <p class="date"> ${item.purchaseDate},   ${item.purchaseTime}</p>
       </div>
     </div>
   `;
