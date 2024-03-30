@@ -51,7 +51,6 @@ function purchaseItem(form) {
     (account) => account.accountNo == sellerId
   );
   //chech is found
-
   if (items[itemIndex].price > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
 
