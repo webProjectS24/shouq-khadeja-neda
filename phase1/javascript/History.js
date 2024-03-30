@@ -41,7 +41,7 @@ function itemToHTML(item) {
     <div class="card-text">
       <h2 class="title">${item.name}</h2>
       <p class="description"> <b>Description:</b> ${item.description}</p>
-      <p class="price"><b>Price:</b> QTR ${item.price}</p>
+      <p class="price"><b>Price:</b> QR ${item.price}</p>
       <p class="quantity"><b>purchased Quantity:</b> ${item.purchasedQuantity}</p>
       <p class="date"> ${item.purchaseDate},   ${item.purchaseTime}</p>
       </div>
