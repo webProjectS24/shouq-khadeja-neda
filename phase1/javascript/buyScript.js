@@ -52,7 +52,7 @@ function purchaseItem(form) {
   );
   //chech is found
 
-  if (items[itemIndex].price > accounts[customerIndex].balance) {
+  if (items[itemIndex].price * form.quantity > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
 
     window.location.href = `/main.html?accountNo=${accountNo}`;
