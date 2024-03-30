@@ -50,7 +50,6 @@ function purchaseItem(form) {
   const sellerIndex = accounts.findIndex(
     (account) => account.accountNo == sellerId
   );
-
   //chech is found
 
   if (items[itemIndex].price > accounts[customerIndex].balance) {
