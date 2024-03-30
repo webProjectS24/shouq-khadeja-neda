@@ -26,7 +26,7 @@ function submitForm(e) {
     (account) => account.username == formData.username
   );
   if (!accounts[index] || accounts[index].password != formData.password) {
-    alert("User name not found or password is incorrect");
+    alert("Username or password is incorrect, please try again");
   } else {
     accounts[index].isLogged = true;
     localStorage.accounts = JSON.stringify(accounts);
