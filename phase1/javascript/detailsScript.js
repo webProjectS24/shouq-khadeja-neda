@@ -42,7 +42,7 @@ function itemToHTML(item) {
                 <p class="quantity">Available: ${item.quantity}</p>
                 <p class="status">${item.quantity == 0 ? "Sold" : "On Sale"}</p>
                 <h3>Sale History</h3>
-                <h4>Total number of items sold: ${item.sold}</h4>
+                <h4>Total number of items sold: ${item.purchasedQuantity}</h4>
                 <h4>Details About Buyers:</h4>
                 <ul class="saleHistory">
                 ${item.customers ? BuyersList(item.customers) : "No Buyers"}

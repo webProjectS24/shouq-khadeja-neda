@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
-html {
+html{
   height: 100%;
 }
 * {
@@ -13,12 +13,16 @@ html {
   list-style: none;
 }
 body {
+  height: 100%;
   background-color: #faf8f0;
   font-family: "Courier New", Courier, monospace;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 3;
   overflow: auto;
+}
+main{
+  height: 100%;
 }
 header {
   width: 100%;
