@@ -2,10 +2,12 @@
 body {
   padding: 0;
   background-color: #f4f4f4;
-  height: 100%;
+}
+main{
+  min-height: 60vh;
 }
 .history-container {
-  font-family: roboto, Courier, monospace;
+  font-family: Courier, monospace;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -27,7 +29,6 @@ body {
     width: 100%;
     flex: 1;
   }
-
   p {
     text-align: justify;
   }
