@@ -62,7 +62,7 @@ function itemToHTML(item) {
 }
 uploaditem.addEventListener("click", NavigateToUploadItem);
 function NavigateToUploadItem() {
-  window.location.href = `../seller/uploadItem.html?accountNo=${accountNo}`;
+  window.location.href = `./uploadItem.html?accountNo=${accountNo}`;
 }
 function update(itemId) {
   itemNo = itemId;
@@ -105,5 +105,5 @@ function findFiltereditems(item) {
 }
 main.addEventListener("click", goToMain);
 function goToMain() {
-  window.location.href = `../../NSK/main.html?accountNo=${accountNo}`;
+  window.location.href = `/main.html?accountNo=${accountNo}`;
 }

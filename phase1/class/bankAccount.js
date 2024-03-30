@@ -1,9 +1,6 @@
 class BankAccount {
-    static count = 11;
     constructor(balance) {
-        this.accountNo = BankAccount.count;
         this.balance = balance; 
-        BankAccount.count++;
     }
 
     deposit(amount) {
@@ -14,7 +11,6 @@ class BankAccount {
         return true;
         }
     }
-
     withdraw(amount) {
         if(amount<0 || this.balance<amount)
         return false;

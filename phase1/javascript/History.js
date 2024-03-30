@@ -51,5 +51,5 @@ function itemToHTML(item) {
 const main = document.querySelector("#main");
 main.addEventListener("click", goToMain);
 function goToMain() {
-  window.location.href = `../../NSK/main.html?accountNo=${accountNo}`;
+  window.location.href = `/main.html?accountNo=${accountNo}`;
 }

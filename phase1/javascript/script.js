@@ -74,10 +74,10 @@ uploadProduct.addEventListener("click", navigateToForm);
 ProductsHistory.addEventListener("click", navigateToHistory);
 purchasehistory.addEventListener("click", ToHistory);
 function navigateToForm() {
-  window.location.href = `../html/seller/uploadItem.html?accountNo=${accountNo}`;
+  window.location.href = `/html/seller/uploadItem.html?accountNo=${accountNo}`;
 }
 function ToHistory() {
-  window.location.href = `./History.html?accountNo=${accountNo}`;
+  window.location.href = `/html/customer/History.html?accountNo=${accountNo}`;
 }
 //search;
 searchinput.addEventListener("input", filteredProductsList);
@@ -97,15 +97,15 @@ function findFilteredProducts(product) {
 }
 // navlist
 function navigateToHistory() {
-  window.location.href = `../html/seller/sellerHistory.html?accountNo=${accountNo}`;
+  window.location.href = `/html/seller/sellerHistory.html?accountNo=${accountNo}`;
 }
 function buyProduct(itemNo, sellerId) {
   let index = accounts.findIndex((account) => account.isLogged == true);
   if (index == -1) {
     alert("please log in first");
-    window.location.href = `./login.html`;
+    window.location.href = `/html/login.html`;
   } else {
-    window.location.href = `./buyProduct.html?accountNo=${accounts[index].accountNo}&itemNo=${itemNo}&sellerId=${sellerId}`;
+    window.location.href = `/html/customer/buyProduct.html?accountNo=${accounts[index].accountNo}&itemNo=${itemNo}&sellerId=${sellerId}`;
   }
 }
 // =======
@@ -115,6 +115,6 @@ function logOut() {
   let index = accounts.findIndex((account) => account.accountNo == accountNo);
   accounts[index].isLogged = false;
   localStorage.accounts = JSON.stringify(accounts);
-  window.location.href = `./main.html`;
+  window.location.href = `/main.html`;
 }
 // >>>>>>> 644dd9f090b62ecd3b18b44a0c7e6f108b527af5

@@ -30,7 +30,7 @@ function submitForm(e) {
   } else {
     accounts[index].isLogged = true;
     localStorage.accounts = JSON.stringify(accounts);
-    window.location.href = `../NSK/main.html?accountNo=${accounts[index].accountNo}`;
+    window.location.href = `/main.html?accountNo=${accounts[index].accountNo}`;
   }
 }
 

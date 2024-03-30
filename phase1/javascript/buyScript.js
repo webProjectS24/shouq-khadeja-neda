@@ -55,10 +55,10 @@ function purchaseItem(form) {
   if (items[itemIndex].price > accounts[customerIndex].balance) {
     alert("Your balance is not enough!");
 
-    window.location.href = `./main.html?accountNo=${accountNo}`;
+    window.location.href = `/main.html?accountNo=${accountNo}`;
   } else if (form.quantity > items[itemIndex].quantity) {
     alert("Quantity is greater than the number of available items ");
-    window.location.href = `./main.html?accountNo=${accountNo}`;
+    window.location.href = `/main.html?accountNo=${accountNo}`;
   } else {
     items[itemIndex].sold += form.quantity;
     items[itemIndex].quantity -= form.quantity;
@@ -88,7 +88,7 @@ function purchaseItem(form) {
     localStorage.items = JSON.stringify(items);
 
     alert("Successful puurchase");
-    window.location.href = `./main.html?accountNo=${accountNo}`;
+    window.location.href = `/main.html?accountNo=${accountNo}`;
   }
 }
 

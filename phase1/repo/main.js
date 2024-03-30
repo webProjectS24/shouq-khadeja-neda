@@ -1,5 +1,5 @@
-import AccountsRepo from "./repo/accountRepo.js";
-import ItemRepo from "./repo/itemRepo.js";
+import AccountsRepo from "./accountRepo.js";
+import ItemRepo from "./itemRepo.js";
 
 
 
