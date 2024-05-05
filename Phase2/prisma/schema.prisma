@@ -9,3 +9,57 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Account {
+  accountNo Int       @id @default(autoincrement())
+  name      String
+  surname   String
+  username  String
+  password  String
+  balance   Float
+  isLogged  Boolean   @default(false)
+  acctType  String
+  customers Customer?
+  seller    Seller?
+}
+
+model Customer {
+  custId          Int           @id @default(autoincrement())
+  accountNo       Int           @unique
+  email           String
+  phoneNo         String
+  shippingAddress String
+  transactions    Transaction[]
+  account         Account       @relation(fields: [accountNo], references: [accountNo])
+}
+
+model Seller {
+  sellerId    Int     @id @default(autoincrement())
+  companyName String
+  accountNo   Int     @unique
+  items       Item[]
+  account     Account @relation(fields: [accountNo], references: [accountNo])
+}
+
+model Item {
+  itemNo       Int           @id @default(autoincrement())
+  name         String
+  price        Float
+  quantity     Int
+  imageUrl     String
+  status       String
+  sold         Int
+  sellerId     Int
+  Seller       Seller?       @relation(fields: [sellerId], references: [sellerId])
+  transactions Transaction[]
+}
+
+model Transaction {
+  transactionId Int       @id @default(autoincrement())
+  itemNo        Int
+  custId        Int
+  Date          DateTime
+  totalPrice    Float
+  Item          Item?     @relation(fields: [itemNo], references: [itemNo])
+  customer      Customer? @relation(fields: [custId], references: [custId])
+}
