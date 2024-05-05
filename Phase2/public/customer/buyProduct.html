@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Buy</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container nav-container">
+          <a href="#home" class="logo">
+            <div>Make<span>up</span></div>
+          </a>
+          <ul class="navlist">
+            <li><a class="active" id="main">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/html/login.html">Login</a></li>
+          </ul>
+          <div class="search-box" id="search-box">
+            <input
+              type="search"
+              name=""
+              id="search-input"
+              placeholder="search Item"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- buying -->
+      <div class="buying-container">
+        <h2>Order Details</h2>
+        <form id="order-form">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" required />
+
+          <label for="shipping-address">Shipping Address:</label>
+          <textarea
+            id="shipping-address"
+            name="shipping_address"
+            rows="4"
+            required
+          ></textarea>
+
+          <label for="phone-number">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone_number"
+            pattern="[0-9]{4} [0-9]{4}"
+            placeholder="xxxx xxxx"
+            required
+          />
+
+          <button type="submit">Submit Order</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="row">
+          <div class="coloum">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#"> about us</a></li>
+              <li><a href="#"> our service</a></li>
+            </ul>
+          </div>
+          <div class="coloum">
+            <h3>Get help</h3>
+            <ul>
+              <li><a href="#"> shipping</a></li>
+              <li><a href="#"> returns</a></li>
+              <li><a href="#"> order status</a></li>
+            </ul>
+          </div>
+          <div class="coloum">
+            <h3>Follow us</h3>
+            <div class="social-links">
+              <a href="#" class="fab fa-instagram"></a>
+              <a href="#" class="fab fa-x-twitter"></a>
+              <a href="#" class="fab fa-linkedin"></a>
+              <a href="#" class="fab fa-telegram"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+    </footer>
+    <script src="/javascript/buyScript.js"></script>
+  </body>
+</html>
