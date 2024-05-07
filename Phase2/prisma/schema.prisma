@@ -19,7 +19,7 @@ model Account {
   balance   Float
   isLogged  Boolean   @default(false)
   acctType  String
-  customers Customer?
+  customer Customer?
   seller    Seller?
 }
 
@@ -44,6 +44,7 @@ model Item {
   name         String
   price        Float
   quantity     Int
+  description  String
   imageUrl     String
   status       String
   sold         Int
