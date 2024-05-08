@@ -34,6 +34,31 @@ class users_itemsRepo {
             return {error: error.message}
         }
     }
+    async getCustomerById(custId){
+        try {
+            return await prisma.customer.findFirst({
+                where: {accoutNo: custId}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getBuyers(itemNo){
+        try {
+            const customers = []
+            const transactions = await prisma.transaction.findMany({
+                where: {itemNo}
+            })
+            transactions.map(async (trans) => {
+                const customer = await this.getCustomerById(trans.custId)
+                customers.unshift(customer)
+            }
+            )
+            return customers
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
     async getTransactionsOfItem(itemNo){
         try {
             return await prisma.transaction.findMany({
@@ -64,8 +89,10 @@ class users_itemsRepo {
     async getSeller(accountNo){
         try {
             const account = await this.getAccount(accountNo)
-            const sellerInfo = account?.seller ?? {}
-            return {...account, ...sellerInfo}
+            const selleraccount = await prisma.seller.findFirst({
+                where: {accountNo}
+            })
+            return {...account, ...selleraccount}
         } catch (error) {
             return {error: error.message}
         }
@@ -73,15 +100,17 @@ class users_itemsRepo {
     async getCustomer(accountNo){
         try {
             const account = await this.getAccount(accountNo)
-            const customerInfo = account?.customer??{}
-            return {...account, ...customerInfo}
+            const customerAccount = await prisma.customer.findFirst({
+                where: {accountNo}
+            })
+            return {...account, ...customerAccount}
         } catch (error) {
             return {error: error.message}
         }
     }
     async getItem(itemNo){
         try {
-            return await prisma.item.findFirst({
+            return prisma.item.findFirst({
                 where: {itemNo}
             })
         } catch (error) {
@@ -97,8 +126,9 @@ class users_itemsRepo {
             return {error: error.message}
         }
     }
-    async addItem(item){
+    async addItem(accountNo,item){
         try {
+            item.sellerId = accountNo
             return await prisma.item.create({
                 data: item
             })
@@ -172,4 +202,4 @@ class users_itemsRepo {
     }
 
 }
-export default new AccountsRepo();
+export default new users_itemsRepo();
