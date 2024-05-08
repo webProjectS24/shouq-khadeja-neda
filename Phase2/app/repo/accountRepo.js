@@ -2,6 +2,174 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 class users_itemsRepo {
+    async getAccounts(){
+        try {
+            return await prisma.account.findMany()
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getAccountsByType(acctType){
+        try {
+            return await prisma.account.findMany({
+                where: {acctType}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getItems(){
+        try {
+            return await prisma.item.findMany()
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getItemsOfSeller(accountNo){
+        try {
+            return await prisma.item.findMany({
+                where: {sellerId: accountNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getTransactionsOfItem(itemNo){
+        try {
+            return await prisma.transaction.findMany({
+                where: {itemNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getTransactionsOfCustomer(accountNo){
+        try {
+            return await prisma.transaction.findMany({
+                where: {custId: accountNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getAccount(accountNo){
+        try {
+            return await prisma.account.findFirst({
+                where: {accountNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getSeller(accountNo){
+        try {
+            const account = await this.getAccount(accountNo)
+            const sellerInfo = account?.seller ?? {}
+            return {...account, ...sellerInfo}
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getCustomer(accountNo){
+        try {
+            const account = await this.getAccount(accountNo)
+            const customerInfo = account?.customer??{}
+            return {...account, ...customerInfo}
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getItem(itemNo){
+        try {
+            return await prisma.item.findFirst({
+                where: {itemNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async getItemsByName(name){
+        try {
+            return await prisma.item.findMany({
+                where: {name: {contains:  name}}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async addItem(item){
+        try {
+            return await prisma.item.create({
+                data: item
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+
+    async addTransaction(transaction){
+        try {
+            return await prisma.transaction.create({
+                data: transaction
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async updateAccount(accountNo, account){
+        try {
+            return await prisma.account.update({
+                data: account,
+                where: {accountNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+
+    async updateItem(itemNo, item){
+        try {
+            return await prisma.item.update({
+                data: item,
+                where: {itemNo}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+
+    async withdraw(accountNo, amount){
+        try {
+            const account =  await this.getAccount(accountNo)
+            if(amount<=account.balance){
+                account.balance -= amount
+                const updatedAccount = account
+                return await this.updateAccount(accountNo,updatedAccount)
+            }
+            else{
+                return "Insuffiecient amount of money"
+            }
+
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
+    async deposit(accountNo, amount){
+        try {
+            const account =  await this.getAccount(accountNo)
+            if(amount >=0){
+                account.balance += amount
+                const updatedAccount = account
+                return await this.updateAccount(accountNo,updatedAccount)
+            }
+            else{
+                return "Insuffiecient amount of money"
+            }
+
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
 
 }
 export default new AccountsRepo();
