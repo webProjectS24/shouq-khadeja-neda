@@ -1,0 +1,32 @@
+[
+    {
+        "email":"Khadija@outlook.com",          
+        "phoneNo" : "66644433",    
+        "shippingAddress": "Zone 13, street 329 Doha",           
+        "accountNo": 13
+    },
+    {
+        "email":"Fatima@outlook.com",          
+        "phoneNo" : "56333572",    
+        "shippingAddress": "Zone 20, street 400 Ar-Rayyan",           
+        "accountNo": 422
+    },
+    {
+        "email":"AliaMoh@gmail.com",          
+        "phoneNo" : "77334412",    
+        "shippingAddress": "Zone 1, street 40 Al-Gharrafa",           
+        "accountNo": 654
+    },
+    {
+        "email":"sarah1102@gmail.com",          
+        "phoneNo" : "54354300",    
+        "shippingAddress": "Zone 15, street 10 Al-wakra",           
+        "accountNo": 987
+    },
+    {
+        "email":"salwayou22@gmail.com",          
+        "phoneNo" : "55550321",    
+        "shippingAddress": "Zone 12, street 200 Doha",           
+        "accountNo": 258
+    }
+  ]

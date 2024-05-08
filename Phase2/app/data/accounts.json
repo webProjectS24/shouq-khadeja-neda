@@ -4,14 +4,14 @@
     "surname":"AbdulKareem",
     "username": "shouq123",
     "password": "pass123",
-    "acctType": "admin",
+    "acctType": "seller",
+    "balance": 10000,
     "isLogged": false,
     "accountNo": 590
   },
   {
     "name": "Nada",
     "surname":"Mohammad",
-    "companyName": "Fenty Beauty",
     "username": "nada123",
     "password": "pass123",
     "acctType": "seller",
@@ -40,6 +40,36 @@
     "accountNo": 422
   },
   {
+    "name": "Alia",
+    "surname": "Mohamad",
+    "username": "Ali2023",
+    "password": "12345678",
+    "acctType": "customer",
+    "balance": 2500,
+    "isLogged": false,
+    "accountNo": 654
+  },
+  {
+    "name": "Sarah", 
+    "surname": "Khalid",
+    "username": "sarah1102",  
+    "password": "strongpassword123",
+    "acctType": "customer",
+    "balance": 100,
+    "isLogged": false,
+    "accountNo": 987
+  },
+  {
+    "name": "Salwa",  
+    "surname": "Youssef",
+    "username": "salwa_22", 
+    "password": "pass123",
+    "acctType": "customer",
+    "balance": 750,
+    "isLogged": false,
+    "accountNo": 258
+  },
+  {
     "name": "Sara",
     "surname":"Ali",
     "username": "sara123",
@@ -48,5 +78,15 @@
     "balance": 20000,
     "isLogged": false,
     "accountNo": 170
+  },
+  {
+    "name": "Aisha",
+    "surname": "Ali",
+    "username": "Aishaa",
+    "password": "secret123",
+    "acctType": "seller",
+    "balance": 5000,
+    "isLogged": false,
+    "accountNo": 375
   }
 ]
