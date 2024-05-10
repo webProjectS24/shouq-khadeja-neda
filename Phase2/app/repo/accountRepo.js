@@ -45,16 +45,23 @@ class users_itemsRepo {
     }
     async getBuyers(itemNo){
         try {
-            const customers = []
-            const transactions = await prisma.transaction.findMany({
-                where: {itemNo}
-            })
-            transactions.map(async (trans) => {
-                const customer = await this.getCustomerById(trans.custId)
-                customers.unshift(customer)
-            }
-            )
-            return customers
+            const buyerInfo = await prisma.transaction.findMany({
+                where: { itemNo },
+                select: {
+                    Date: true,
+                    totalPrice: true,
+                    customer: {
+                        select: {
+                            account: {
+                                select: {
+                                    username: true
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            return buyerInfo;
         } catch (error) {
             return {error: error.message}
         }
@@ -137,8 +144,9 @@ class users_itemsRepo {
         }
     }
 
-    async addTransaction(transaction){
+    async addTransaction(transaction,accountNo){
         try {
+            transaction.accountNo = accountNo
             return await prisma.transaction.create({
                 data: transaction
             })
