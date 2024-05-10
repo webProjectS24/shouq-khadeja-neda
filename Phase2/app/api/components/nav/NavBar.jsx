@@ -28,8 +28,8 @@ const NavBar =() =>{
                   <Link href="/cart">
                     <span className="hover:purple relative">
                       Cart
-                      <FaShoppingCart className="ml-10 text-lg" />
-                      <span className="absolute top-0 right-0 bg-red-600 text-white px-2 rounded-full text-xs">
+                      <FaShoppingCart className="ml-9 text-lg" />
+                      <span className="absolute top-1 right-0 h-5 w-4 bg-red-600 text-white rounded-full text-sm">
                         0
                       </span>
                     </span>
