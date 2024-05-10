@@ -17,7 +17,13 @@ export default function page() {
     <>
         <div className={styles.top}>
         <h1 className={styles.h1}>History of Uploaded Items</h1>
-        <button className={styles.upload_items}>Upload Item</button>
+        <Link href={
+                    {
+                        pathname: `/sellers/items/uploadItem`,
+                        query: accountNo
+                    }
+                }><button className={styles.upload_items}>Upload Item</button></Link>
+        
         <button className={styles.upload_items}>View statistics</button>
         </div>
         <div className={styles.products_container}>
