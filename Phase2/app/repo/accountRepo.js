@@ -238,10 +238,45 @@ class users_itemsRepo {
         try {
           return await prisma.item.aggregate({
             where: { sellerId: accountNo },
-            avg: { price: true }
+            _avg: { price: true }
           })
         } catch (error) {
           return { error: error.message }
+        }
+      }
+
+      async getTotalRevenue(accountNo) {
+        try {
+          return await prisma.transaction.aggregate({
+            where: { Item: { sellerId: accountNo } },
+            _sum: { totalPrice: true }
+          })
+        } catch (error) {
+          return { error: error.message }
+        }
+      }
+      async getTopThreeSellingItems(accountNo) {
+        try {
+          return await prisma.item.findMany({
+            where: { sellerId: accountNo },
+            orderBy: { sold: 'desc' },
+            take: 3
+          })
+        } catch (error) {
+          return { error: error.message }
+        }
+      }
+
+      async getproductsNeverSold(accountNo){
+        try {
+            return prisma.item.findMany({
+                where:{
+                    sellerId: accountNo,
+                    sold: 0
+                }
+            })
+        } catch (error) {
+            return { error: error.message };
         }
       }
 
