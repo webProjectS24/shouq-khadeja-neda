@@ -6,11 +6,6 @@ import styles from "@/public/css/login.module.css";
 import Link from "next/link";
 
 export default function Login() {
-  // const searchParams = useSearchParams();
-  // const queries = Object.fromEntries(searchParams);
-  // console.log(queries);
-  //const router = useRouter();
-
   async function handleLoginSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
