@@ -20,7 +20,7 @@ export default function page() {
         <Link href={
                     {
                         pathname: `/sellers/items/uploadItem`,
-                        query: accountNo
+                        query: {accountNo: accountNo}
                     }
                 }><button className={styles.upload_items}>Upload Item</button></Link>
         

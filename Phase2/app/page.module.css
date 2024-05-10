@@ -126,6 +126,22 @@
   color: black;
 }
 
+.back_btn{
+  align-self: flex-start;
+  font-weight: 700;
+  background-color: #bbae7c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.back_btn:hover {
+  background-color: bisque;
+  color: black;
+}
+
 .products_container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -135,18 +151,20 @@
 }
 
 .content{
+  width: 100%;
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .itemDetails{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
-  width: 100%;
+  width: 90%;
   border-radius: 2%;
   padding: 2rem 2rem;
   background-color: white;
@@ -170,6 +188,7 @@
 }
 
 .title{
+  text-align: center;
   align-self: center;
 }
 
@@ -177,6 +196,59 @@
   border-top: 1px solid black;
   width: 100%;
 }
+
+.form{
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.fieldset{
+  border: 0;
+  font-weight: 800;
+  text-align: start;
+  margin-bottom: 0.5rem;
+  padding: 2rem;
+}
+
+
+.uploadInput{
+  border: 1px solid black;
+        border-radius: 5px;
+        height: 31px;
+        padding: 3px 7px;
+        width: 100%;
+}
+.uploadForm {
+  width: 60vw;
+}
+.upload{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.uploadSubmit{
+    width: 69%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    color: black;
+    background-color: #bbae7c;
+}
+.uploadSubmit:hover {
+  background-color: bisque;
+}
+.form_btn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
 
 
 
@@ -202,12 +274,30 @@
   }
 
   .itemDetails{       
-    width: 90%;
+    width: 80%;
   }
-  .deatils_image{
+  .details_image{
       grid-area: image;
       height: 90%;
       width: 80%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
+  }
+  .form{
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+  }
+  .fieldset {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 1rem;
+    text-wrap: nowrap;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }

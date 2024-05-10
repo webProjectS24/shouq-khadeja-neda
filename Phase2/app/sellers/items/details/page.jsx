@@ -10,10 +10,11 @@ export default function page() {
     const [item,setItem] = useState({})
     const [buyers, setBuyers] = useState([])
     useEffect(() => {
+      console.log('hello');
       fetch(`/api/accounts/sellers/${queries.accountNo}/items/${queries.itemNo}`)
           .then(res => res.json())
           .then(setItem)
-  },null)
+  },[])
     useEffect(() => {
       fetch(`/api/accounts/sellers/${queries.accountNo}/items/${queries.itemNo}/buyers`)
           .then(res => res.json())
@@ -24,7 +25,7 @@ export default function page() {
   return (
     <>
     <div className={styles.content}>
-        <Link href='/sellers/items'>Back to Items History</Link>
+        <Link href='/sellers/items' className={styles.back_btn}>Back to Items History</Link>
         <div className={styles.itemDetails}>
           <div className={styles.details}>
                     <img src={item.imageUrl} alt="Item 1" className={styles.details_image}/>

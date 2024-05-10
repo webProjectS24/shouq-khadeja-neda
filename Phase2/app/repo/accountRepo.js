@@ -135,7 +135,11 @@ class users_itemsRepo {
     }
     async addItem(accountNo,item){
         try {
-            item.sellerId = accountNo
+            item.sellerId = parseInt(accountNo)
+            item.sold = 0
+            item.price = parseFloat(item.price)
+            item.quantity = parseInt(item.quantity)
+            item.status = 'On Sale'
             return await prisma.item.create({
                 data: item
             })
