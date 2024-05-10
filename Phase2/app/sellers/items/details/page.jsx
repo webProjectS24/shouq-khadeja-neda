@@ -15,7 +15,7 @@ export default function page() {
           .then(setItem)
   },null)
     useEffect(() => {
-      fetch(`/api/accounts/sellers/${queries.accountNo}/items/${queries.itemNo}/transactions`)
+      fetch(`/api/accounts/sellers/${queries.accountNo}/items/${queries.itemNo}/buyers`)
           .then(res => res.json())
           .then(setBuyers)
   }, [])
