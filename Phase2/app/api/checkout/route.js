@@ -35,7 +35,7 @@ export async function POST(req) {
     line_items.push({
       quantity: 1,
       price_data: {
-        currency: 'Qa',
+        currency: 'USA',
         product_data: {
           name: product.title
         },
