@@ -148,9 +148,11 @@ class users_itemsRepo {
         }
     }
 
-    async addTransaction(transaction,accountNo){
+    async addTransaction(transaction,accountNo,itemNo){
         try {
-            transaction.accountNo = accountNo
+            transaction.custId = accountNo
+            transaction.itemNo = itemNo
+            transaction.totalPrice = parseFloat(transaction.totalPrice)
             return await prisma.transaction.create({
                 data: transaction
             })

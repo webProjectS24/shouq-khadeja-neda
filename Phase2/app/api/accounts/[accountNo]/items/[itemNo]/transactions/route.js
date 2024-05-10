@@ -7,9 +7,10 @@ export async function GET(request, { params }) {
 }
 
 export async function POST(request, { params }) {
-    const accountNo = params.id;
+    const accountNo = params.accountNo;
+    const itemNo = params.itemNo
     const transaction = await request.json()
-    const newTransaction = await users_itemsRepo.addTransaction(transaction, accountNo)
+    const newTransaction = await users_itemsRepo.addTransaction(transaction, parseInt(accountNo),parseInt(itemNo))
     return Response.json(newTransaction)
 }
 
