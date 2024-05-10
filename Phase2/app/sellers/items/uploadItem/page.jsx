@@ -6,7 +6,6 @@ import{ useSearchParams, useRouter } from 'next/navigation'
 export default function page() {
     const searchParams = useSearchParams() 
     const queries = Object.fromEntries(searchParams) 
-    console.log(queries);
     const router = useRouter()
     async function handleSubmit(e) {
         e.preventDefault()
