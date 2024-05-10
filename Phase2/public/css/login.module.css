@@ -1,0 +1,81 @@
+.body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92vh;
+}
+.form {
+  display: flex;
+  width: 70%;
+  max-width: 600px;
+  min-width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 10px;
+  border: 1px solid rgb(215, 214, 214);
+  background-color: rgba(255, 255, 255, 0.714);
+}
+
+.loginText {
+  font-size: 23px;
+  font-weight: 500;
+}
+.username,
+.password {
+  flex: 1;
+  width: 100%;
+  min-width: 100px;
+  padding: 15px;
+  border: solid;
+  border-color: rgb(215, 214, 214);
+  caret-color: black;
+  font-size: 10px;
+  border-radius: 50px;
+  border-width: 1px;
+  outline-width: 0;
+}
+.username:hover,
+.password:hover {
+  border: solid;
+  border-width: 0.01px;
+}
+.username::placeholder,
+.password::placeholder {
+  color: black;
+}
+
+.forgotPassword {
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.loginBtn {
+  color: white;
+  font-size: 20px;
+  background: black;
+  padding: 15px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+.loginBtn:hover {
+  text-decoration: underline;
+  background: #e3dac9;
+  color: black;
+}
