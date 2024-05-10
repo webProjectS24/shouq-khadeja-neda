@@ -1,21 +1,23 @@
 'use client'
 import { React, useState, useEffect } from 'react'
 import styles from '@/app/page.module.css'
-import{ useRouter, useSearchParams } from 'next/navigation'
+import{ useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import accountRepo from '@/app/repo/accountRepo'
 
 export default function page() {
-    const accountNo = 170
-    const router = useRouter()
     const searchParams = useSearchParams()  //map
-    const item = Object.fromEntries(searchParams) //object
+    const queries = Object.fromEntries(searchParams) //object
+    const [item,setItem] = useState({})
     const [buyers, setBuyers] = useState([])
     useEffect(() => {
-      fetch(`/api/items/${item.itemNo}/transactions`)
+      fetch(`/api/accounts/sellers/${queries.accountNo}/items/${queries.itemNo}`)
+          .then(res => res.json())
+          .then(setItem)
+  },null)
+    useEffect(() => {
+      fetch(`/api/accounts/sellers/${queries.accountNo}/items/${queries.itemNo}/transactions`)
           .then(res => res.json())
           .then(setBuyers)
-
   }, [])
     // const buyers = await accountRepo.getBuyers(item.itemNo)
     // console.log(buyers);

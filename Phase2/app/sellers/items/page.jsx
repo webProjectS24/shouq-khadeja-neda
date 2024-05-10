@@ -1,11 +1,18 @@
-import React from 'react'
+'use client'
+import {React, useState, useEffect} from 'react'
 import styles from '@/app/page.module.css'
-import accountRepo from '@/app/repo/accountRepo'
 import Link from 'next/link'
 
 
-export default async function page() {
-  const items = await accountRepo.getItemsOfSeller(170)
+
+export default function page() {
+  const accountNo = 170
+    const [items, setItems] = useState([])
+    useEffect(() => {
+      fetch(`/api/accounts/sellers/${accountNo}/items`)
+          .then(res => res.json())
+          .then(setItems)
+  }, [])
   return (
     <>
         <div className={styles.top}>
@@ -35,7 +42,10 @@ export default async function page() {
         <Link className={styles.item_button} href={
                     {
                         pathname: `/sellers/items/details`,
-                        query: item
+                        query: {
+                          itemNo: item.itemNo,
+                          accountNo: accountNo
+                        }
                     }
                 }>View Details</Link>
                 <Link className={styles.item_button} href={
