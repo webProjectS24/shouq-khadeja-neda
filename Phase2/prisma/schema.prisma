@@ -59,6 +59,7 @@ model Transaction {
   custId        Int
   Date          DateTime
   totalPrice    Float
+  quantity      Int
   Item          Item?     @relation(fields: [itemNo], references: [itemNo])
   customer      Customer? @relation(fields: [custId], references: [accountNo])
 }
