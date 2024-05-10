@@ -34,11 +34,14 @@ export default function page() {
                     <p>{item.quantity == 0 ? "Sold" : "On Sale"}</p>
                     <h3 className={styles.sale_history_title}>Sale History</h3>
                     <h4>Total number of items sold: {item.sold}</h4>
+                    <h4>Buyers</h4>
+                    {buyers.length == 0 ? <p>No Buyers</p> :
                     <ol className={styles.saleHistory}>
-                        {buyers ==[] ? "No Buyers": buyers.map(buyer => 
+                        {buyers.map(buyer => 
                          <li><b>Buyer:</b> {buyer.customer.account.username} <br></br><b>Total Price:</b> {buyer.totalPrice}<br></br><b>Date Purchased:</b> {buyer.Date}</li>
                         )}
-                    </ol>
+                    </ol>}
+                    
                     </div>
                 </div> 
         </div>
