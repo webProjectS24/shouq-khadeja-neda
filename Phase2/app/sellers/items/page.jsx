@@ -23,8 +23,12 @@ export default function page() {
                         query: {accountNo: accountNo}
                     }
                 }><button className={styles.upload_items}>Upload Item</button></Link>
-        
-        <button className={styles.upload_items}>View statistics</button>
+        <Link href={
+                    {
+                        pathname: `/sellers/items/statistics`,
+                        query: {accountNo: accountNo}
+                    }
+                }><button className={styles.upload_items}>statistics</button></Link>
         </div>
         <div className={styles.products_container}>
         {items.map(item => 

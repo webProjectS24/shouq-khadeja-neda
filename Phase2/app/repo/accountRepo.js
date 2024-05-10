@@ -212,6 +212,36 @@ class users_itemsRepo {
             return {error: error.message}
         }
     }
+    async gettotalOfUploadedItems(accountNo) {
+        try {
+          return await prisma.item.count({
+            where: { sellerId: accountNo }
+          })
+        } catch (error) {
+          return { error: error.message }
+        }
+      }
+
+      async getmostBoughtItem(accountNo) {
+        try {
+          return await prisma.item.findFirst({
+            where: { sellerId: accountNo },
+            orderBy: { sold: 'desc' }
+          })
+        } catch (error) {
+          return { error: error.message }
+        }
+      }
+      async getAveragePriceOfItems(accountNo) {
+        try {
+          return await prisma.item.aggregate({
+            where: { sellerId: accountNo },
+            avg: { price: true }
+          })
+        } catch (error) {
+          return { error: error.message }
+        }
+      }
 
 }
 export default new users_itemsRepo();
