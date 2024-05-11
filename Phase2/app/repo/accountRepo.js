@@ -79,6 +79,9 @@ class users_itemsRepo {
     try {
       return await prisma.transaction.findMany({
         where: { custId: accountNo },
+        include: {
+          Item: true,
+        },
       });
     } catch (error) {
       return { error: error.message };

@@ -1,5 +1,6 @@
 "use client";
-import { React, useState, useEffect, useRouter } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "@/public/css/login.module.css";
 import Footer from "@/app/components/footer/Footer";
 import NavBar from "@/app/components/nav/NavBar";
@@ -7,7 +8,7 @@ import Link from "next/link";
 import { Montserrat_Alternates } from "next/font/google";
 
 export default function Login() {
-  // const router = useRouter();
+  const router = useRouter();
   async function handleChange(e) {}
   async function handleLoginSubmit(e) {
     e.preventDefault();
@@ -47,6 +48,9 @@ export default function Login() {
 
         if (!response.ok) {
           throw new Error("Failed to update account information");
+        } else {
+          // const { accountNo } = await response.json();
+          router.push(`/`);
         }
 
         console.log("Account updated successfully");

@@ -11,7 +11,7 @@ export default function page() {
       .then((res) => res.json())
       .then((data) => setTransition(data));
   }, []);
-  console.log(items.forEach((item) => console.log(item)));
+  console.log(items);
   return (
     <>
       <div className={styles.top}>
@@ -21,14 +21,22 @@ export default function page() {
         {items.map((item) => (
           <div className={styles.card} key="${item.itemNo}">
             <div className={styles.product_info}>
-              <img src={item.imageUrl} className={styles.image} />
-              <h2 className={styles.product_title}>{item.name}</h2>
-              <p className={styles.product_description}>{item.description}</p>
-              <p>Currently Available: {item.quantity}</p>
-              <p className={styles.product_price}>{item.price} QAR</p>
-              <p className={styles.item_status}>
-                Item Status: {item.quantity == 0 ? "Sold" : "Available"}
+              <img alt=" " src={item.Item.imageUrl} className={styles.image} />
+              <h2 className={styles.product_title}>{item.Item.name}</h2>
+              <p className={styles.product_description}>
+                {item.Item.description}
               </p>
+              <p>Currently Available: {item.Item.quantity}</p>
+              <p className={styles.product_price}>
+                Price: {item.Item.price} QAR
+              </p>
+              <p className={styles.product_price}>
+                Total price: {item.totalPrice} QAR
+              </p>
+              <p className={styles.item_status}>
+                Item Status: {item.Item.quantity == 0 ? "Sold" : "Available"}
+              </p>
+              <p className={styles.product_price}>Date: {item.Date} </p>
             </div>
           </div>
         ))}
