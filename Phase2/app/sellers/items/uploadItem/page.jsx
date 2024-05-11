@@ -26,15 +26,18 @@ export default function page() {
   }
   return (
     <>
-    <div className={styles.content}>
-    <Link href={
-                    {
-                        pathname: `/sellers/items`,
-                        query: {accountNo: queries.accountNo}
-                    }
-                } className={styles.back_btn}>Back to Items History</Link>
-    <div className={styles.upload}>
-    <div className={styles.title}>
+      <div className={styles.content}>
+        <Link
+          href={{
+            pathname: `/sellers/items`,
+            query: { accountNo: queries.accountNo },
+          }}
+          className={styles.back_btn}
+        >
+          Back to Items History
+        </Link>
+        <div className={styles.upload}>
+          <div className={styles.title}>
             <h1>Upload an Item</h1>
           </div>
           <div className={styles.uploadForm}>
