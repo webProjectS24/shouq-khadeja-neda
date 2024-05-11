@@ -26,7 +26,12 @@ export default function page() {
   return (
     <>
     <div className={styles.content}>
-    <Link href='/sellers/items' className={styles.back_btn}>Back to Items History</Link>
+    <Link href={
+                    {
+                        pathname: `/sellers/items`,
+                        query: {accountNo: queries.accountNo}
+                    }
+                } className={styles.back_btn}>Back to Items History</Link>
     <div className={styles.upload}>
     <div className={styles.title}>
             <h1>Upload an Item</h1>

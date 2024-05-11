@@ -25,7 +25,12 @@ export default function page() {
   return (
     <>
     <div className={styles.content}>
-        <Link href='/sellers/items' className={styles.back_btn}>Back to Items History</Link>
+        <Link href={
+                    {
+                        pathname: `/sellers/items`,
+                        query: {accountNo: queries.accountNo}
+                    }
+                } className={styles.back_btn}>Back to Items History</Link>
         <div className={styles.itemDetails}>
           <div className={styles.details}>
                     <img src={item.imageUrl} alt="Item 1" className={styles.details_image}/>

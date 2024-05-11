@@ -2,11 +2,16 @@
 import {React, useState, useEffect} from 'react'
 import styles from '@/app/page.module.css'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 
 
 export default function page() {
-  const accountNo = 170
+  const searchParams = useSearchParams() 
+    const query = Object.fromEntries(searchParams) 
+    const accountNo = parseInt(query.accountNo)
+
+
     const [items, setItems] = useState([])
     useEffect(() => {
       fetch(`/api/accounts/sellers/${accountNo}/items`)

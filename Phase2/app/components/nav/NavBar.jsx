@@ -7,7 +7,7 @@ const NavBar =() =>{
               <Link href="/">
                 <span className="font-bold text-xl">Makeup</span>
               </Link>
-              <div className="flex justify-center flex-grow ">
+              <div className="flex justify-center flex-grow">
               <ul className="flex space-x-6">
                 <li>
                   <Link href="/products">

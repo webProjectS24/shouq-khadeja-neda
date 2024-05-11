@@ -7,7 +7,7 @@ import styles from '@/app/page.module.css'
 export default function page() {
     const searchParams = useSearchParams() 
     const queries = Object.fromEntries(searchParams) 
-    const accountNo = queries.accountNo
+    const accountNo = parseInt(queries.accountNo)
     const [totalUploadedItems, setTotalUploadedItems] = useState(0);
     const [mostBoughtItem, setMostBoughtItem] = useState({});
     const [averagePriceOfItems, setAveragePriceOfItems] = useState(0);
@@ -49,7 +49,12 @@ export default function page() {
     return (
         <>
       <div className={styles.content}>
-      <Link href='/sellers/items' className={styles.back_btn}>Back to Items History</Link>
+      <Link href={
+                    {
+                        pathname: `/sellers/items`,
+                        query: {accountNo: accountNo}
+                    }
+                } className={styles.back_btn}>Back to Items History</Link>
         <h1>Statistics</h1>
         <div className={styles.statisticsData}>
           <h2>Total Number of Uploaded Products: {totalUploadedItems}</h2>

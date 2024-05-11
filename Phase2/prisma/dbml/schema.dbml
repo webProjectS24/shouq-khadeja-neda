@@ -1,0 +1,67 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Account {
+  accountNo Int [pk, increment]
+  name String [not null]
+  surname String [not null]
+  username String [not null]
+  password String [not null]
+  balance Float [not null]
+  isLogged Boolean [not null, default: false]
+  acctType String [not null]
+  customer Customer
+  seller Seller
+}
+
+Table Customer {
+  accountNo Int [unique, not null]
+  email String [not null]
+  phoneNo String [not null]
+  shippingAddress String [not null]
+  transactions Transaction [not null]
+  account Account [not null]
+}
+
+Table Seller {
+  accountNo Int [unique, not null]
+  companyName String [not null]
+  items Item [not null]
+  account Account [not null]
+}
+
+Table Item {
+  itemNo Int [pk, increment]
+  name String [not null]
+  price Float [not null]
+  quantity Int [not null]
+  description String [not null]
+  imageUrl String [not null]
+  status String [not null]
+  sold Int [not null]
+  sellerId Int [not null]
+  Seller Seller
+  transactions Transaction [not null]
+}
+
+Table Transaction {
+  transactionId Int [pk, increment]
+  itemNo Int [not null]
+  custId Int [not null]
+  Date DateTime [not null]
+  totalPrice Float [not null]
+  quantity Int [not null]
+  Item Item
+  customer Customer
+}
+
+Ref: Customer.accountNo - Account.accountNo
+
+Ref: Seller.accountNo - Account.accountNo
+
+Ref: Item.sellerId > Seller.accountNo
+
+Ref: Transaction.itemNo > Item.itemNo
+
+Ref: Transaction.custId > Customer.accountNo
