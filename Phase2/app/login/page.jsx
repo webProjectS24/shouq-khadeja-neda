@@ -4,32 +4,41 @@ import styles from "@/public/css/login.module.css";
 // import Footer from "@/app/api/components/footer/Footer";
 // import NavBar from "@/app/api/components/nav/NavBar";
 import Link from "next/link";
+import { Montserrat_Alternates } from "next/font/google";
 
 export default function Login() {
+  // const router = useRouter();
+  const [accounts, setAccunts] = useState([]);
+  async function handleChange(e) {}
+
+  const formData = new FormData(e.target);
+  const account = Object.fromEntries(formData);
+
   async function handleLoginSubmit(e) {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const loginDetails = Object.fromEntries(formData);
-
-    const url = new URL("/api/login/", window.location.href);
-    url.searchParams.append("username", loginDetails.email);
-    url.searchParams.append("password", loginDetails.password);
-
-    const response = await fetch(url, {
+    const response = await fetch("/api/login", {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ account }),
     });
 
-    if (response.ok) {
-      // Assuming the API returns a URL to redirect on successful login
-      const { url } = await response.json();
-      router.push(url || "/dashboard"); // Redirect to dashboard or other route
+    const data = await response.json();
+
+    if (data.status === "ok") {
+      alter("Login Successful");
     } else {
-      alert("Failed to login. Please check your credentials and try again.");
+      alter("Login Failed, please try again with correct credentials");
     }
   }
+
+  useEffect(() => {
+    async function loadData() {
+      const response = await fetch(`/api/login`);
+      const accountsdata = await response.json();
+      setAccunts(accountsdata);
+    }
+    loadData();
+  }, [accountNo]);
 
   return (
     <>
@@ -38,21 +47,23 @@ export default function Login() {
         <div className={styles.loginContainer}>
           <form className={styles.form} onSubmit={handleLoginSubmit}>
             <h1>Login</h1>
-            <label htmlFor="email">Username</label>
+            <label htmlFor="Username">Username</label>
             <input
-              id="email"
-              name="email"
+              id="Username"
+              name="Username"
               required
               className={styles.username}
+              onChange={handleChange}
             />
 
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
               required
-              className={styles.username}
+              className={styles.password}
+              onChange={handleChange}
             />
             <button type="submit" className={styles.loginBtn}>
               Login
