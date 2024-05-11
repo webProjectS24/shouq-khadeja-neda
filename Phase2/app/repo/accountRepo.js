@@ -93,6 +93,15 @@ class users_itemsRepo {
             return {error: error.message}
         }
     }
+    async getAccount(username){
+        try {
+            return await prisma.account.findFirst({
+                where: {username}
+            })
+        } catch (error) {
+            return {error: error.message}
+        }
+    }
     async getSeller(accountNo){
         try {
             const account = await this.getAccount(accountNo)
@@ -170,7 +179,6 @@ class users_itemsRepo {
             return {error: error.message}
         }
     }
-
     async updateItem(itemNo, item){
         try {
             return await prisma.item.update({
@@ -279,6 +287,5 @@ class users_itemsRepo {
             return { error: error.message };
         }
       }
-
 }
 export default new users_itemsRepo();

@@ -9,6 +9,7 @@ export async function GET(request, { params }) {
 
 export async function POST(request, { params }) {
     const accountNo = params.accountNo
+    const itemNo = params.itemNo
     const item = await request.json()
     const response = await users_itemsRepo.addItem(parseInt(accountNo), item)
     return Response.json(response, { status: 201 })

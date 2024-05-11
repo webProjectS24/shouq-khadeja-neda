@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from '@/app/page.module.css'
 import{ useSearchParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export default function page() {
     const searchParams = useSearchParams() 
@@ -23,6 +24,9 @@ export default function page() {
             router.push('/sellers/items')
     }
   return (
+    <>
+    <div className={styles.content}>
+    <Link href='/sellers/items' className={styles.back_btn}>Back to Items History</Link>
     <div className={styles.upload}>
     <div className={styles.title}>
             <h1>Upload an Item</h1>
@@ -42,7 +46,7 @@ export default function page() {
                 <label for="quantity">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" required className={styles.uploadInput}/>
 
-                <label for="image">Image URL:</label>
+                <label for="imageUrl">Image URL:</label>
                 <input type="url" id="imageUrl" name="imageUrl" className={styles.uploadInput} required/>
                 
             </fieldset>
@@ -52,5 +56,7 @@ export default function page() {
         </form>
         </div>
         </div>
+        </div>
+        </>
   )
 }
