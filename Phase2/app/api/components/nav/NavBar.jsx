@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart } from "react-icons/fa";
 import styles from "@/public/css/NavBar.module.css";
 
 const NavBar = () => {

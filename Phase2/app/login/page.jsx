@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/public/css/login.module.css";
-import Footer from "@/app/api/components/footer/Footer";
 import NavBar from "@/app/api/components/nav/NavBar";
 import Link from "next/link";
 import { Montserrat_Alternates } from "next/font/google";
@@ -28,13 +27,15 @@ export default function Login() {
 
       if (!accountResponse.ok) {
         throw new Error("Failed to fetch account data");
+      } else {
+        // const { accountNo } = await response.json();
       }
 
       const account = await accountResponse.json();
       console.log(account);
 
       if (!account || account.password !== loginDetails.password) {
-        console.log("Login failed: Incorrect username or password");
+        alert("Login failed: Incorrect username or password");
       } else {
         // Update account information if login is successful
         account.isLogged = true;
@@ -45,12 +46,9 @@ export default function Login() {
           },
           body: JSON.stringify(account),
         });
-
+        router.push(`/`);
         if (!response.ok) {
           throw new Error("Failed to update account information");
-        } else {
-          // const { accountNo } = await response.json();
-          router.push(`/`);
         }
 
         console.log("Account updated successfully");
@@ -62,7 +60,6 @@ export default function Login() {
 
   return (
     <>
-      <NavBar></NavBar>
       <body className={styles.body}>
         <div className={styles.loginContainer}>
           <form className={styles.form} onSubmit={handleLoginSubmit}>
@@ -91,7 +88,7 @@ export default function Login() {
           </form>
         </div>
       </body>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 }
