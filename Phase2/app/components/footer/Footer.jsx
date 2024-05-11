@@ -2,17 +2,17 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: 'white-400', color: 'bleck', display: 'flex', justifyContent: 'center' }}>
+    <footer style={{ backgroundColor: 'bleck', color: 'white', display: 'flex', justifyContent: 'center' }}>
       <div className="footer-container" style={{ display: 'flex', gap: '15px', flexGrow: 1}}>
         <div className="column" style={{ flex: 1 }}>
           <div className="row">
-            <h3 style={{textDecoration: 'underline', color: 'black'}}>About Us</h3>
+            <h3 style={{textDecoration: 'underline', color: 'white'}}>About Us</h3>
             <p>Welcome to NSK We are a passionate team dedicated to providing unique experience.</p>
           </div>
           </div>
           <div className="column" style={{ flex: 1 }}>
           <div className="row ">
-            <h3 style={{textDecoration: 'underline', color: 'black'}}> Contact Us</h3>
+            <h3 style={{textDecoration: 'underline', color: 'white'}}> Contact Us</h3>
             <p>Email: info@example.com</p>
             <p>Phone: +1234567890</p>
           </div>
@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
         <div className="column" style={{ flex: 1 }}>
           <div className="row">
-            <h3 style={{textDecoration: 'underline', color: 'black'}}>Newsletter</h3>
+            <h3 style={{textDecoration: 'underline', color: 'white'}}>Newsletter</h3>
             <form>
               <input type="email" placeholder="Enter your email" />
               <button type="submit">Subscribe</button>
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="copy-right" style={{textAlign: 'center'}}>
+      <div className="copy-right" style={{textAlign: 'center', marginTop: '90px'}}>
         &copy; 2024 NSK. All rights reserved.
       </div>
     </footer>
