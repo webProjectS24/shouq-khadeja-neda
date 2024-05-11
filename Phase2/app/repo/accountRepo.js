@@ -170,7 +170,6 @@ class users_itemsRepo {
             return {error: error.message}
         }
     }
-
     async updateItem(itemNo, item){
         try {
             return await prisma.item.update({

@@ -53,28 +53,19 @@ export default function page() {
         <h1>Statistics</h1>
         <div className={styles.statisticsData}>
           <h2>Total Number of Uploaded Products: {totalUploadedItems}</h2>
-
-          <h2>Most Bought Product: {mostBoughtItem ? mostBoughtItem.name : 'N/A'}</h2>
-
-
+          <h2>Most Bought Product: {mostBoughtItem ? mostBoughtItem.name : "Not Available"} (bought {mostBoughtItem.sold} times)</h2>
           <h2>Average Price of Items: {averagePriceOfItems} QAR</h2>
- 
-
           <h2>Total Revenue: {totalRevenue} QAR</h2>
-
-
           <h2>Top Three Selling Items:</h2>
           <ul>
             {topThreeSellingItems.map((item, index) => (
               <li key={index}>{item.name}</li>
             ))}
           </ul>
-
-
           <h2>Products Never Sold:</h2>
           <ul>
-            {productsNeverSold.map((item, index) => (
-              <li key={index}>{item.name}</li>
+            {productsNeverSold.map((item) => (
+              <li>{item.name}</li>
             ))}
           </ul>
 
