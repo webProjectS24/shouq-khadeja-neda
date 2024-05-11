@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/public/css/login.module.css";
-import Footer from "@/app/components/footer/Footer";
-import NavBar from "@/app/components/nav/NavBar";
+import Footer from "@/app/api/components/footer/Footer";
+import NavBar from "@/app/api/components/nav/NavBar";
 import Link from "next/link";
 import { Montserrat_Alternates } from "next/font/google";
 
