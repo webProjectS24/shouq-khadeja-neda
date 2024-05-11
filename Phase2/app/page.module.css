@@ -1,15 +1,14 @@
-.saleHistory{
-
+.saleHistory {
 }
-.h1{
+.h1 {
   text-align: center;
 }
-.item-status{
+.item-status {
   font-weight: 900;
   color: red;
 }
 .item-button {
-  display:flex;
+  display: flex;
   justify-content: center;
   font-weight: 700;
   background-color: #bbae7c;
@@ -24,14 +23,13 @@
   background-color: bisque;
   color: black;
 }
-.top{
+.top {
   display: flex;
   margin-bottom: 1rem;
   flex-direction: column;
   align-items: center;
-  
 }
-.upload_items{
+.upload_items {
   padding: 1rem 2rem;
   font-weight: 700;
   background-color: #bbae7c;
@@ -40,28 +38,28 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.product-btns{
+.product-btns {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
 }
-.hidden{
+.hidden {
   display: none;
 }
-.inputNubmer{
-    border: 1px solid black;
-    border-radius:5px;
-    height: 31px;
-    padding: 3px 7px;
-}
-.inputSubmit{
+.inputNubmer {
   border: 1px solid black;
-  border-radius:5px;
+  border-radius: 5px;
+  height: 31px;
+  padding: 3px 7px;
+}
+.inputSubmit {
+  border: 1px solid black;
+  border-radius: 5px;
   height: 31px;
   padding: 3px 7px;
   cursor: pointer;
 }
-.card{
+.card {
   background-color: #fff;
   padding: 15px;
   border-radius: 8px;
@@ -76,11 +74,11 @@
   flex: 1;
 }
 
-.image{
-    width: 100%;
-    border-radius: 10px;
-    height: 300px;
-    box-shadow: 0 2px 4px rgba(165, 64, 64, 0.5);
+.image {
+  width: 100%;
+  border-radius: 10px;
+  height: 300px;
+  box-shadow: 0 2px 4px rgba(165, 64, 64, 0.5);
 }
 
 .product_title {
@@ -97,19 +95,19 @@
   color: #888;
 }
 
-.item_status{
+.item_status {
   font-weight: 900;
   color: red;
 }
 
-.product_btns{
+.product_btns {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
 }
 
 .item_button {
-  display:flex;
+  display: flex;
   justify-content: center;
   font-weight: 700;
   background-color: #bbae7c;
@@ -126,7 +124,7 @@
   color: black;
 }
 
-.back_btn{
+.back_btn {
   align-self: flex-start;
   font-weight: 700;
   background-color: #bbae7c;
@@ -150,7 +148,7 @@
   margin: 0rem 1rem;
 }
 
-.content{
+.content {
   width: 100%;
   margin-top: 0.5rem;
   display: flex;
@@ -162,7 +160,7 @@
   margin-bottom: 1rem;
 }
 
-.itemDetails{
+.itemDetails {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
   width: 90%;
   border-radius: 2%;
@@ -170,34 +168,34 @@
   background-color: white;
 }
 
-.details_content{
+.details_content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.details{
-    width: 100%;
+.details {
+  width: 100%;
 }
 
-.details_image{
+.details_image {
   width: 34vw;
   height: 100%;
   border-radius: 10%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
 }
 
-.title{
+.title {
   text-align: center;
   align-self: center;
 }
 
-.sale_history_title{
+.sale_history_title {
   border-top: 1px solid black;
   width: 100%;
 }
 
-.form{
+.form {
   padding: 1rem 2rem;
   background-color: white;
   border-radius: 10px;
@@ -206,7 +204,7 @@
   border-radius: 10px;
 }
 
-.fieldset{
+.fieldset {
   border: 0;
   font-weight: 800;
   text-align: start;
@@ -214,39 +212,38 @@
   padding: 2rem;
 }
 
-
-.uploadInput{
+.uploadInput {
   border: 1px solid black;
-        border-radius: 5px;
-        height: 31px;
-        padding: 3px 7px;
-        width: 100%;
+  border-radius: 5px;
+  height: 31px;
+  padding: 3px 7px;
+  width: 100%;
 }
 .uploadForm {
   width: 60vw;
 }
-.upload{
+.upload {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.uploadSubmit{
-    width: 69%;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    color: black;
-    background-color: #bbae7c;
+.uploadSubmit {
+  width: 69%;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  color: black;
+  background-color: #bbae7c;
 }
 .uploadSubmit:hover {
   background-color: bisque;
 }
-.form_btn{
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
+.form_btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .statisticsData {
@@ -280,44 +277,40 @@
   background-color: #bbae7c;
 }
 
-
-
-
-
-@media screen and (min-width: 50rem){
-  .products_container{
+@media screen and (min-width: 50rem) {
+  .products_container {
     margin-top: 1rem;
   }
-  .top{
+  .top {
     margin: 0rem 1rem;
     flex-direction: row;
     gap: 2rem;
   }
 
-  .details_content{
+  .details_content {
     justify-content: flex-start;
   }
 
-  .details{
+  .details {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "image content";
   }
 
-  .itemDetails{       
+  .itemDetails {
     width: 80%;
   }
-  .details_image{
-      grid-area: image;
-      height: 90%;
-      width: 80%;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
+  .details_image {
+    grid-area: image;
+    height: 90%;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.405);
   }
-  .form{
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
   }
   .fieldset {
     display: grid;
@@ -325,7 +318,7 @@
     gap: 1rem;
     text-wrap: nowrap;
   }
-  .content{
+  .content {
     display: flex;
     flex-direction: column;
     align-items: center;

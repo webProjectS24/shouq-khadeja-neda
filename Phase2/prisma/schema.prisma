@@ -61,7 +61,7 @@ model Transaction {
   transactionId Int       @id @default(autoincrement())
   itemNo        Int
   custId        Int
-  Date          DateTime
+  Date          DateTime 
   totalPrice    Float
   quantity      Int
   Item          Item?     @relation(fields: [itemNo], references: [itemNo])
