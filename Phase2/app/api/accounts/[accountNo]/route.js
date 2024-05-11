@@ -13,7 +13,7 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-    const accountNo = params.id;
+    const accountNo = params.accountNo;
     const account = await request.json()
     const updatedAccount = await users_itemsRepo.updateAccount(parseInt(accountNo), account)
     return Response.json(updatedAccount)

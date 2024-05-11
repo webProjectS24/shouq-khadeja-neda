@@ -44,7 +44,7 @@ export default function page() {
         setProductsNeverSold(productsNeverSoldData);
       }
       loadData()
-    }, [accountNo]) // Fetch statistics when accountNo changes
+    }, [accountNo])
   
     return (
         <>

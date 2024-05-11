@@ -10,24 +10,20 @@ export default function Login() {
     e.preventDefault();
     const formData = new FormData(e.target);
     const loginDetails = Object.fromEntries(formData);
-
-    const url = new URL("/api/login/", window.location.href);
-    url.searchParams.append("username", loginDetails.email);
-    url.searchParams.append("password", loginDetails.password);
-
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (response.ok) {
-      // Assuming the API returns a URL to redirect on successful login
-      const { url } = await response.json();
-      router.push(url || "/dashboard"); // Redirect to dashboard or other route
-    } else {
+    const account = await fetch(`/api/login/${loginDetails.username}`)
+    if(!account || account.password != loginDetails.password){
       alert("Failed to login. Please check your credentials and try again.");
+    }
+    else if(account.password == console.loginDetails.password){
+      account.isLogged = true
+      const response = await fetch(`/api/accounts/${account.accountNo}`,{
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(account)
+    }
+    )
     }
   }
 
@@ -38,10 +34,10 @@ export default function Login() {
         <div className={styles.loginContainer}>
           <form className={styles.form} onSubmit={handleLoginSubmit}>
             <h1>Login</h1>
-            <label htmlFor="email">Username</label>
+            <label htmlFor="username">Username</label>
             <input
-              id="email"
-              name="email"
+              id="username"
+              name="username"
               required
               className={styles.username}
             />
