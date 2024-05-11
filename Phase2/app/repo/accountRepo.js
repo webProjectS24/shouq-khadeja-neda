@@ -93,19 +93,16 @@ class users_itemsRepo {
       return { error: error.message };
     }
   }
-
-  async getAccountByUsernamePassword(username, password) {
+  async getAccountByUsername(username) {
     try {
-      return await prisma.account.findUnique({
-        where: {
-          username: username,
-          password: password,
-        },
+      return await prisma.account.findFirst({
+        where: { username },
       });
     } catch (error) {
       return { error: error.message };
     }
   }
+
   async getSeller(accountNo) {
     try {
       const account = await this.getAccount(accountNo);
@@ -183,7 +180,6 @@ class users_itemsRepo {
       return { error: error.message };
     }
   }
-
   async updateItem(itemNo, item) {
     try {
       return await prisma.item.update({

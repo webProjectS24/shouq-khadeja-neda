@@ -7,8 +7,8 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(request, { params }) {
-    const itemNo = params[1]
+    const itemNo = parseInt(params.itemNo)
     const item = await request.json()
-    const updatedAccount = await users_itemsRepo.updateItem(parseInt(itemNo), item)
-    return Response.json(updatedAccount)
+    const updatedAccount = await users_itemsRepo.updateItem(itemNo, item)
+    return Response.json(updatedAccount, { status: 200 })
 }

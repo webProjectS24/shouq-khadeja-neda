@@ -8,37 +8,53 @@ import { Montserrat_Alternates } from "next/font/google";
 
 export default function Login() {
   // const router = useRouter();
-  const [accounts, setAccunts] = useState([]);
   async function handleChange(e) {}
-
-  const formData = new FormData(e.target);
-  const account = Object.fromEntries(formData);
-
   async function handleLoginSubmit(e) {
     e.preventDefault();
-    const response = await fetch("/api/login", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ account }),
-    });
+    const formData = new FormData(e.target);
+    const loginDetails = Object.fromEntries(formData);
 
-    const data = await response.json();
+    try {
+      const accountResponse = await fetch(
+        `/api/login/${loginDetails.username}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-    if (data.status === "ok") {
-      alter("Login Successful");
-    } else {
-      alter("Login Failed, please try again with correct credentials");
+      if (!accountResponse.ok) {
+        throw new Error("Failed to fetch account data");
+      }
+
+      const account = await accountResponse.json();
+      console.log(account);
+
+      if (!account || account.password !== loginDetails.password) {
+        console.log("Login failed: Incorrect username or password");
+      } else {
+        // Update account information if login is successful
+        account.isLogged = true;
+        const response = await fetch(`/api/accounts/${account.accountNo}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(account),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to update account information");
+        }
+
+        console.log("Account updated successfully");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
     }
   }
-
-  useEffect(() => {
-    async function loadData() {
-      const response = await fetch(`/api/login`);
-      const accountsdata = await response.json();
-      setAccunts(accountsdata);
-    }
-    loadData();
-  }, [accountNo]);
 
   return (
     <>
@@ -47,10 +63,10 @@ export default function Login() {
         <div className={styles.loginContainer}>
           <form className={styles.form} onSubmit={handleLoginSubmit}>
             <h1>Login</h1>
-            <label htmlFor="Username">Username</label>
+            <label htmlFor="username">Username</label>
             <input
-              id="Username"
-              name="Username"
+              id="username"
+              name="username"
               required
               className={styles.username}
               onChange={handleChange}
