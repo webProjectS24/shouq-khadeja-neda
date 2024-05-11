@@ -30,7 +30,7 @@ export default function page() {
                     body: JSON.stringify(item)
                 }
             )
-            router.push('/sellers/items')
+            router.push(`/sellers/items?accountNo=${item.sellerId}`)
     }
   return (
     <>

@@ -22,7 +22,7 @@ export default function page() {
         body: JSON.stringify(newItem),
       }
     );
-    router.push("/sellers/items");
+    router.push(`/sellers/items?accountNo=${queries.accountNo}`);
   }
   return (
     <>
