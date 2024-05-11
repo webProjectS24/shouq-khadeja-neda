@@ -1,17 +1,17 @@
 "use client";
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "@/app/page.module.css";
 import Link from "next/link";
 
 export default function page() {
-  const accountNo = 170;
+  const accountNo = 13;
   const [items, setTransition] = useState([]);
   useEffect(() => {
     fetch(`/api/accounts/${accountNo}/transaction`)
       .then((res) => res.json())
-      .then(setTransition);
+      .then((data) => setTransition(data));
   }, []);
-  console.log(items);
+  console.log(items.forEach((item) => console.log(item)));
   return (
     <>
       <div className={styles.top}>
@@ -19,7 +19,7 @@ export default function page() {
       </div>
       <div className={styles.products_container}>
         {items.map((item) => (
-          <div className={styles.card} key="d">
+          <div className={styles.card} key="${item.itemNo}">
             <div className={styles.product_info}>
               <img src={item.imageUrl} className={styles.image} />
               <h2 className={styles.product_title}>{item.name}</h2>
@@ -29,11 +29,6 @@ export default function page() {
               <p className={styles.item_status}>
                 Item Status: {item.quantity == 0 ? "Sold" : "Available"}
               </p>
-              {/* <form class="hidden" id="id-${item.itemNo}">
-            <label for="quantity">Update Quantity: </label>
-            <input type="number" name="quantity" id="quantity"/>
-            <input type="submit"/>
-            </form> */}
             </div>
           </div>
         ))}
