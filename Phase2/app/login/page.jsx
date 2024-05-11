@@ -1,8 +1,8 @@
 "use client";
 import { React, useState, useEffect, useRouter } from "react";
 import styles from "@/public/css/login.module.css";
-// import Footer from "@/app/api/components/footer/Footer";
-// import NavBar from "@/app/api/components/nav/NavBar";
+import Footer from "@/app/components/footer/Footer";
+import NavBar from "@/app/components/nav/NavBar";
 import Link from "next/link";
 import { Montserrat_Alternates } from "next/font/google";
 
@@ -58,7 +58,7 @@ export default function Login() {
 
   return (
     <>
-      {/* <NavBar></NavBar> */}
+      <NavBar></NavBar>
       <body className={styles.body}>
         <div className={styles.loginContainer}>
           <form className={styles.form} onSubmit={handleLoginSubmit}>
@@ -87,7 +87,7 @@ export default function Login() {
           </form>
         </div>
       </body>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 }
